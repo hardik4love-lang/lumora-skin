@@ -6,14 +6,14 @@ Official digital storefront and Meta/WhatsApp conversational sales engine for **
 - **Live URL:** [https://hardik4love-lang.github.io/lumora-skin/](https://hardik4love-lang.github.io/lumora-skin/)
 
 ## Featured Product Lineup
-1. **The Gold Flagship: Lumora 24K Gold Bright Night Pack (50ml)** — ₹1,699
+1. **The Gold Flagship: Lumora 24K Gold Bright Night Pack (50ml)** — **₹3,000** (MRP ₹4,000 • 25% OFF)
    - *Active Actives:* 24K Colloidal Gold, Pure Kashmiri Saffron, Glutathione, Alpha-Arbutin, Ceramides NP/AP/EOP, Squalane.
-2. **Advance Two-Step Clear Skin Kit** — ₹1,899
+2. **Advance Two-Step Clear Skin Kit** — **₹5,000**
    - *Step 1:* Tiny Pure Vitamin C Active Booster Bottle (concentrated L-Ascorbic Acid & Ferulic active in amber glass ampoule vial).
    - *Step 2:* Clinical Treatment Sachet Pouch (exact dimensions: 2" height × 1.5" width) containing single-use sterile active bio-ferment & spot-clearing complex.
-3. **Radiance Infusion Serum (30ml)** — ₹1,499
+3. **Radiance Infusion Serum (30ml)** — **₹2,000**
    - 5% Niacinamide, 2% Tranexamic Acid (TXA), Copper Tripeptides (GHK-Cu).
-4. **The Complete Transformation Trio Bundle** — ₹3,999 (Save ₹1,098).
+4. **The Complete Transformation Trio Bundle** — **₹7,999** (MRP ₹11,000 • Save ₹3,001).
 
 ## WhatsApp Automation & Lead Forwarding
 - **Verified WhatsApp Line:** `+91 88408 27259` (`https://wa.me/918840827259`)
