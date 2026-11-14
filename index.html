@@ -159,6 +159,101 @@
     .eq-bar-2 { animation: eqWave 0.8s ease-in-out infinite 0.2s; }
     .eq-bar-3 { animation: eqWave 1.3s ease-in-out infinite 0.4s; }
     .eq-bar-paused { animation-play-state: paused !important; height: 3px !important; }
+
+    /* ==================== EYE-CATCHING 24K LUMINOUS LOGO EFFECTS ==================== */
+    @keyframes logoAuraPulse {
+      0%, 100% {
+        box-shadow: 0 0 16px rgba(212, 168, 67, 0.45), 0 0 36px rgba(245, 212, 133, 0.25), inset 0 0 12px rgba(245, 212, 133, 0.3);
+        border-color: rgba(245, 212, 133, 0.65);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(212, 168, 67, 0.85), 0 0 60px rgba(245, 212, 133, 0.5), inset 0 0 20px rgba(245, 212, 133, 0.55);
+        border-color: rgba(255, 245, 205, 0.95);
+      }
+    }
+
+    @keyframes logoShimmerGleam {
+      0% {
+        transform: translateX(-160%) rotate(30deg);
+        opacity: 0;
+      }
+      18% {
+        opacity: 0.85;
+      }
+      38% {
+        transform: translateX(180%) rotate(30deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(180%) rotate(30deg);
+        opacity: 0;
+      }
+    }
+
+    .luminous-logo-bezel {
+      position: relative;
+      border-radius: 50%;
+      padding: 2.5px;
+      background: linear-gradient(135deg, #fff2cc 0%, #d4a843 40%, #8f651b 75%, #fce8a6 100%);
+      animation: logoAuraPulse 4.5s ease-in-out infinite;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      flex-shrink: 0;
+    }
+
+    .luminous-logo-bezel:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 45px rgba(245, 212, 133, 0.95), 0 0 80px rgba(212, 168, 67, 0.6);
+    }
+
+    .luminous-logo-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #18130d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .luminous-logo-inner::after {
+      content: '';
+      position: absolute;
+      top: -60%;
+      left: -60%;
+      width: 220%;
+      height: 220%;
+      background: linear-gradient(
+        90deg,
+        transparent 32%,
+        rgba(255, 255, 255, 0.65) 48%,
+        rgba(245, 212, 133, 0.8) 52%,
+        transparent 68%
+      );
+      animation: logoShimmerGleam 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .luminous-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.65)) contrast(1.1) brightness(1.12);
+      position: relative;
+      z-index: 1;
+    }
+
+    .luminous-brand-title {
+      font-family: var(--font-display);
+      background: linear-gradient(135deg, #ffffff 0%, #fff2cc 30%, #e6b952 70%, #fce8a6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 10px rgba(212, 168, 67, 0.35));
+      letter-spacing: 0.24em;
+    }
   </style>
 </head>
 <body class="antialiased selection:bg-[#d4a843] selection:text-black">
@@ -170,19 +265,21 @@
   <header id="main-header" class="prestige-header px-3 sm:px-6 md:px-8 py-2.5 sm:py-3 sticky top-0 z-50 bg-[#070605]/95 backdrop-blur-xl border-b border-[#2e2316] shadow-2xl transition-all">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
 
-      <!-- 1. BRAND LOGO & CREST (LEFT - FIXED & PROMINENT) -->
+      <!-- 1. BRAND LOGO & CREST (LEFT - 50% BIGGER & EYE-CATCHING 24K LUMINOUS MEDALLION) -->
       <a href="#" class="flex items-center gap-2.5 sm:gap-3 group cursor-pointer focus:outline-none flex-shrink-0" onclick="playChime(587.33)">
-        <div class="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border border-[#d4a843]/40 p-0.5 shadow-2xl relative group-hover:scale-105 transition duration-500 overflow-hidden bg-[#18130d] flex-shrink-0 flex items-center justify-center">
-          <img src="assets/lumora_logo_circle.png" alt="Lumora Official Seal" class="w-full h-full object-contain rounded-full">
+        <div class="luminous-logo-bezel w-14 h-14 sm:w-16 sm:h-16 md:w-[72px] md:h-[72px] xl:w-[84px] xl:h-[84px]">
+          <div class="luminous-logo-inner">
+            <img src="assets/lumora_logo_circle.png" alt="Lumora Official Seal" class="luminous-logo-img">
+          </div>
         </div>
         <div class="text-left select-none flex-shrink-0">
-          <div class="text-lg sm:text-xl md:text-2xl font-light tracking-[0.22em] display-font text-[#fcf9f4] leading-none">LUMORA</div>
-          <div class="hidden sm:block text-[8px] md:text-[9.5px] tracking-[0.25em] text-[#d4a843] uppercase font-semibold mt-1 whitespace-nowrap">Cellular Radiance • 24K Saffron</div>
+          <div class="text-xl sm:text-2xl xl:text-3xl luminous-brand-title leading-none">LUMORA</div>
+          <div class="hidden sm:block text-[8px] md:text-[9.5px] xl:text-[10px] tracking-[0.28em] text-[#d4a843] uppercase font-semibold mt-1 whitespace-nowrap">Cellular Radiance • 24K Saffron</div>
         </div>
       </a>
 
       <!-- 2. NAVIGATION LINKS (CENTER - ULTRA-LUXURY COMPACT DESKTOP) -->
-      <nav class="hidden lg:flex items-center gap-2.5 xl:gap-6 text-[10.5px] xl:text-xs font-semibold tracking-[0.14em] uppercase text-[#a6927d] flex-shrink">
+      <nav class="hidden lg:flex items-center gap-2 xl:gap-6 text-[10px] xl:text-xs font-semibold tracking-[0.14em] uppercase text-[#a6927d] flex-shrink">
         <a href="#gold-flagship" class="hover:text-[#f5d485] transition text-[#f5d485] whitespace-nowrap">Flagship</a>
         <a href="#clear-kit" class="hover:text-[#f5d485] transition whitespace-nowrap">Clear Kit</a>
         <a href="#body-oil" class="hover:text-[#f5d485] transition whitespace-nowrap">Body Oil</a>
@@ -872,7 +969,11 @@
       </div>
 
       <div class="flex items-center justify-center mx-auto py-2">
-        <img src="assets/lumora_logo_circle.png" alt="Lumora Official Seal" class="w-20 h-20 rounded-full border border-[#d4a843]/40 shadow-2xl">
+        <div class="luminous-logo-bezel w-24 h-24">
+          <div class="luminous-logo-inner">
+            <img src="assets/lumora_logo_circle.png" alt="Lumora Official Seal" class="luminous-logo-img">
+          </div>
+        </div>
       </div>
 
       <div>
@@ -892,15 +993,24 @@
     </div>
   </div>
 
-  <footer class="border-t border-[var(--border)] py-12 px-6 text-center text-xs text-[var(--text-muted)] space-y-4">
-    <div class="flex justify-center items-center gap-2">
-      <span class="font-bold tracking-widest text-[var(--text-main)] display-font">LUMORA SKIN</span>
-      <span>•</span>
-      <span>WhatsApp Line: +91 88408 27259</span>
-      <span>•</span>
-      <span>Instagram: @lumoraaskin</span>
+  <footer class="border-t border-[var(--border)] py-14 px-6 text-center text-xs text-[var(--text-muted)] space-y-5">
+    <div class="flex flex-col items-center justify-center gap-3">
+      <div class="luminous-logo-bezel w-16 h-16">
+        <div class="luminous-logo-inner">
+          <img src="assets/lumora_logo_circle.png" alt="Lumora Official Seal" class="luminous-logo-img">
+        </div>
+      </div>
+      <div class="text-xl luminous-brand-title tracking-[0.24em]">LUMORA</div>
+      <div class="text-[9px] tracking-[0.28em] text-[#d4a843] uppercase font-semibold">Cellular Radiance • 24K Saffron Formulation</div>
     </div>
-    <p class="max-w-md mx-auto text-[11px]">Cellular Dermatology • 24K Gold • Glutathione • Paraben Free • Cruelty Free</p>
+    <div class="flex flex-wrap justify-center items-center gap-3 text-xs pt-2">
+      <a href="https://wa.me/918840827259" target="_blank" class="hover:text-[#f5d485] transition">WhatsApp Direct: +91 88408 27259</a>
+      <span>•</span>
+      <a href="https://instagram.com/lumoraaskin" target="_blank" class="hover:text-[#f5d485] transition">Instagram: @lumoraaskin</a>
+      <span>•</span>
+      <span>ISO 9001 & GMP Certified</span>
+    </div>
+    <p class="max-w-md mx-auto text-[11px] text-[#8c7b6c]">Cellular Dermatology • 24K Gold • Glutathione • Paraben Free • Cruelty Free</p>
   </footer>
 
   <script>
