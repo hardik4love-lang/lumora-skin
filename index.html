@@ -8,23 +8,8 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap');
 
-    /* 3 Haute Luxury Brand Theme Presets */
-    .theme-botanique {
-      --bg-dark: #07130c;
-      --bg-surface: #0f2117;
-      --bg-card: #152d20;
-      --gold-primary: #d4a843;
-      --gold-bright: #f5d485;
-      --gold-deep: #8f651b;
-      --text-main: #fcfbf8;
-      --text-muted: #9ab4a3;
-      --border: #214330;
-      --font-display: 'Cinzel', serif;
-      --font-editorial: 'Cormorant Garamond', serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    .theme-royal-gold {
+    /* Royal Molten Noir Flagship Theme (Default) */
+    :root, .theme-royal-gold {
       --bg-dark: #070605;
       --bg-surface: #110e0a;
       --bg-card: #18130d;
@@ -35,21 +20,6 @@
       --text-muted: #a6927d;
       --border: #2e2316;
       --font-display: 'Cinzel', serif;
-      --font-editorial: 'Cormorant Garamond', serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    .theme-glass-dew {
-      --bg-dark: #070c16;
-      --bg-surface: #0e172a;
-      --bg-card: #15223c;
-      --gold-primary: #38bdf8;
-      --gold-bright: #7dd3fc;
-      --gold-deep: #0284c7;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --border: #1e3355;
-      --font-display: 'Space Grotesk', sans-serif;
       --font-editorial: 'Cormorant Garamond', serif;
       --font-sans: 'Plus Jakarta Sans', sans-serif;
     }
@@ -122,86 +92,58 @@
     }
   </style>
 </head>
-<body class="theme-botanique antialiased selection:bg-[#d4a843] selection:text-black">
+<body class="antialiased selection:bg-[#d4a843] selection:text-black">
 
   <div id="luxury-cursor"></div>
   <div id="luxury-dot"></div>
 
-  <!-- FLOATING MASTER SWITCHER & VIP EXECUTIVE CONTROLS -->
-  <aside class="sticky top-0 z-50 bg-black/92 backdrop-blur-xl border-b border-[#2e2316] px-4 py-3 shadow-2xl">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-      
-      <!-- Brand & Executive Badge -->
-      <div class="flex items-center gap-3">
-        <div class="relative w-9 h-9 rounded-full border border-[var(--gold-primary)] overflow-hidden shadow-md">
-          <img src="assets/lumora_real_asset_0.jpg" alt="Lumora Official Seal" class="w-full h-full object-cover">
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-bold text-white tracking-[0.2em] uppercase display-font">LUMORA SKIN</span>
-            <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-[#291f16] text-[#d4a843] border border-[#594228]">
-              ● LIVE FLAGSHIP & WHATSAPP SUITE
-            </span>
-          </div>
-          <p class="text-[10px] text-[#8c7b6c]">Verified WhatsApp Line: <a href="https://wa.me/918840827259" target="_blank" class="text-[#d4a843] hover:underline font-mono">+91 88408 27259</a></p>
-        </div>
-      </div>
-
-      <!-- Live Theme Engine -->
-      <div class="flex items-center bg-[#140e0a] p-1 rounded-2xl border border-[#3b2b1a] text-xs">
-        <button id="theme-btn-botanique" onclick="switchTheme('botanique')" class="px-3.5 py-1.5 rounded-xl font-bold bg-[#152d20] border border-[#d4a843] text-[#f5d485] shadow-lg transition flex items-center gap-1.5">
-          <span>🌿</span> Atelier Botanique
-        </button>
-        <button id="theme-btn-royal" onclick="switchTheme('royal-gold')" class="px-3.5 py-1.5 rounded-xl font-medium text-[#a6927d] hover:text-white transition flex items-center gap-1.5">
-          <span>👑</span> Royal Molten Noir
-        </button>
-        <button id="theme-btn-glass" onclick="switchTheme('glass-dew')" class="px-3.5 py-1.5 rounded-xl font-medium text-[#a6927d] hover:text-white transition flex items-center gap-1.5">
-          <span>💎</span> Seoul Glass Dew
-        </button>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-2">
-        <button onclick="toggleAudio()" id="sound-btn" class="px-3 py-1.5 rounded-xl border border-[#3b2b1a] hover:border-[#d4a843] text-xs font-medium text-[#d4a843] flex items-center gap-1.5 transition">
-          <span id="sound-icon">🔈</span> <span class="hidden sm:inline">Sensory Sound</span>
-        </button>
-        <button onclick="openVipPass()" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#d4a843] to-[#8f651b] text-black text-xs font-bold shadow-md hover:scale-105 transition">
-          ★ VIP Black Card
-        </button>
-      </div>
-
-    </div>
-  </aside>
-
-  <!-- STOREFRONT HEADER -->
-  <header class="border-b border-[var(--border)] px-6 py-5 bg-[var(--bg-dark)]/90 backdrop-blur-md sticky top-[57px] z-40 transition-colors">
+  <!-- PRESTIGE SINGLE LUXURY HEADER -->
+  <header class="border-b border-[#2e2316] px-6 py-4 bg-[#070605]/95 backdrop-blur-xl sticky top-0 z-50 shadow-2xl transition-all">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <div class="flex items-center gap-4">
-        <div class="w-12 h-12 rounded-full border border-[var(--gold-primary)] p-0.5 shadow-lg relative group cursor-pointer" onclick="playChime(587.33)">
-          <img src="assets/lumora_real_asset_0.jpg" alt="Lumora Seal" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition duration-500">
+      <!-- Brand Logo Crest -->
+      <a href="#" class="flex items-center gap-3.5 group cursor-pointer" onclick="playChime(587.33)">
+        <div class="w-11 h-11 rounded-full border border-[#d4a843] p-0.5 shadow-lg relative group-hover:scale-105 transition duration-500 overflow-hidden bg-[#18130d]">
+          <img src="assets/lumora_real_asset_0.jpg" alt="Lumora Seal" class="w-full h-full object-cover rounded-full">
         </div>
         <div>
-          <h1 class="text-2xl md:text-3xl font-light tracking-[0.25em] display-font text-[var(--text-main)]">LUMORA</h1>
-          <p class="text-[9px] tracking-[0.4em] text-[var(--text-muted)] uppercase">Cellular Radiance • 24K Saffron Formulation</p>
+          <h1 class="text-2xl md:text-3xl font-light tracking-[0.25em] display-font text-[#fcf9f4]">LUMORA</h1>
+          <p class="text-[9px] tracking-[0.4em] text-[#d4a843] uppercase font-semibold">Cellular Radiance • 24K Saffron Formulation</p>
         </div>
-      </div>
+      </a>
 
-      <nav class="hidden lg:flex items-center gap-7 text-xs font-medium tracking-[0.2em] uppercase text-[var(--text-muted)]">
-        <a href="#brand-designs" class="hover:text-[var(--gold-bright)] transition text-[var(--gold-bright)] font-bold flex items-center gap-1.5">
-          <span>✨</span> 3 Boutique Designs
+      <!-- Clean Prestige Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-[0.2em] uppercase text-[#a6927d]">
+        <a href="#gold-flagship" class="hover:text-[#f5d485] transition flex items-center gap-1.5 text-[#f5d485]">
+          <span>👑</span> Gold Flagship
         </a>
-        <a href="#gold-flagship" class="hover:text-[var(--gold-primary)] transition font-bold">👑 Gold Flagship</a>
-        <a href="#clear-kit" class="hover:text-[var(--gold-bright)] transition text-[var(--gold-primary)] font-bold">✨ Clear Kit</a>
-        <a href="#body-oil" class="hover:text-[var(--gold-bright)] transition text-[var(--gold-bright)] font-bold">🌟 Body Oil</a>
-        <a href="#scanner" class="hover:text-[var(--gold-primary)] transition">AI Scanner</a>
-        <a href="#products-showcase" class="hover:text-[var(--gold-primary)] transition">Catalog</a>
+        <a href="#clear-kit" class="hover:text-[#f5d485] transition flex items-center gap-1.5">
+          <span>✨</span> Clear Skin Kit
+        </a>
+        <a href="#body-oil" class="hover:text-[#f5d485] transition flex items-center gap-1.5">
+          <span>🌟</span> Body Whitening Oil
+        </a>
+        <a href="#scanner" class="hover:text-[#f5d485] transition flex items-center gap-1.5">
+          <span>🔬</span> AI Skin Scanner
+        </a>
+        <a href="#products-showcase" class="hover:text-[#f5d485] transition">
+          Catalog
+        </a>
       </nav>
 
+      <!-- Right Action Controls -->
       <div class="flex items-center gap-3">
-        <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20from%20the%20Flagship%20collection" target="_blank" onclick="playChime(659.25)" class="flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--gold-primary)] text-[var(--gold-primary)] text-xs font-bold hover:bg-[var(--gold-primary)] hover:text-black transition shadow-lg">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.056-1.118-.08-.258-.083-.586-.201-.988-.377-1.706-.749-2.812-2.487-2.898-2.6-.086-.115-.696-.927-.696-1.77 0-.843.44-1.258.597-1.429.157-.17.342-.213.456-.213.114 0 .228.001.328.006.105.006.244-.04.382.293.144.344.49 1.196.533 1.282.043.086.071.187.014.3-.057.115-.086.186-.171.286-.086.099-.18.223-.257.299-.086.086-.176.179-.076.351.101.171.446.736.958 1.192.658.587 1.213.769 1.385.855.172.086.272.072.372-.043.101-.115.429-.501.543-.673.114-.171.229-.143.386-.086.157.057.999.472 1.17.558.172.086.286.129.328.2.043.072.043.415-.101.82z"/></svg>
-          <span class="font-mono">+91 88408 27259</span>
+        <button onclick="toggleAudio()" id="sound-btn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#3b2b1a] hover:border-[#d4a843] text-xs font-medium text-[#d4a843] transition">
+          <span id="sound-icon">🔈</span> <span class="text-[11px]">Sound</span>
+        </button>
+
+        <button onclick="openVipPass()" class="hidden md:flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#d4a843] to-[#8f651b] text-black text-xs font-bold shadow-md hover:scale-105 transition">
+          ★ VIP Pass
+        </button>
+
+        <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20from%20the%20Flagship%20collection" target="_blank" onclick="playChime(659.25)" class="flex items-center gap-2 px-4 py-2 rounded-full border border-[#d4a843] bg-[#1a140d] text-[#f5d485] text-xs font-bold hover:bg-[#d4a843] hover:text-black transition shadow-lg">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.056-1.118-.08-.258-.083-.586-.201-.988-.377-1.706-.749-2.812-2.487-2.898-2.6-.086-.115-.696-.927-.696-1.77 0-.843.44-1.258.597-1.429.157-.17.342-.213.456-.213.114 0 .228.001.328.006.105.006.244-.04.382.293.144.344.49 1.196.533 1.282.043.086.071.187.014.3-.057.115-.086.186-.171.286-.086.099-.18.223-.257.299-.086.086-.176.179-.076.351.101.171.446.736.958 1.192.658.587 1.213.769 1.385.855.172.086.272.072.372-.043.101-.115.429-.501.543-.673.114-.171.229-.143.386-.086.157.057.999.472 1.17.558.172.086.286.129.328.2.043.072.043.415-.101.82z"/></svg>
+          <span class="font-mono text-[11px]">+91 88408 27259</span>
         </a>
       </div>
 
@@ -275,7 +217,7 @@
           </div>
 
           <div class="relative rounded-2xl overflow-hidden aspect-square border border-[var(--border)] group">
-            <img src="assets/lumora_duo.jpg" alt="Lumora Glow Duo" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <img src="assets/lumora_campaign_poster.jpg" alt="Lumora Complete Care for Radiant Skin" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
             
             <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
@@ -298,195 +240,6 @@
             </a>
           </div>
 
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ==================== BESPOKE THREE BRAND DESIGN DIRECTIONS ==================== -->
-  <section id="brand-designs" class="max-w-7xl mx-auto px-6 py-20 border-t border-[var(--border)] space-y-12">
-    
-    <div class="text-center max-w-3xl mx-auto space-y-3">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-bold tracking-[0.25em] uppercase bg-[var(--bg-surface)] text-[var(--gold-bright)] border border-[var(--border)] shadow-md">
-        <span>✨</span> BRAND IDENTITY & STOREFRONT DIRECTIONS
-      </div>
-      <h3 class="text-3xl md:text-5xl font-light editorial-font text-[var(--text-main)]">
-        Three Haute Boutique Directions
-      </h3>
-      <p class="text-xs md:text-sm text-[var(--text-muted)] font-light max-w-2xl mx-auto leading-relaxed">
-        Three bespoke aesthetic directions capturing the authentic soul of Lumora Skincare. Click <strong>"Activate Theme"</strong> on any concept below to immediately transform the storefront atmosphere and palette in real time.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-      <!-- DESIGN 1: ATELIER BOTANIQUE -->
-      <div class="holo-card rounded-3xl p-6 flex flex-col justify-between border-2 border-[#2a503b] hover:border-[var(--gold-bright)] shadow-2xl transition-all duration-500 group relative overflow-hidden bg-gradient-to-b from-[#0e2117] via-[#09160f] to-[#050d09]">
-        <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-emerald-500/15 blur-3xl pointer-events-none"></div>
-
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-[10px] font-extrabold px-3 py-1 rounded-full bg-[#1b3d2b] text-[#86efac] border border-[#2a5c40] uppercase tracking-wider">
-              DIRECTION 1 • CLIENT FAVORITE
-            </span>
-            <span class="text-xs text-[var(--gold-bright)] font-serif italic">Atelier Botanique</span>
-          </div>
-
-          <!-- Poster Image with zoom effect -->
-          <div class="relative rounded-2xl overflow-hidden aspect-[4/5] border border-[#244b34] group-hover:border-[var(--gold-primary)] transition duration-500 shadow-xl">
-            <img src="assets/lumora_campaign_poster.jpg" alt="Lumora Atelier Botanique: Complete Care for Radiant Skin" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
-            
-            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-white">
-              <span class="bg-black/70 backdrop-blur px-2.5 py-1 rounded-lg border border-white/10 font-medium">🌿 Moss Rock & Sunbeam Alchemy</span>
-              <span class="bg-[#d4a843] text-black px-2 py-0.5 rounded font-bold text-[10px]">ORGANIC LUXURY</span>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-2xl font-light editorial-font text-white group-hover:text-[var(--gold-bright)] transition">
-              Atelier Botanique & Emerald Gold
-            </h4>
-            <p class="text-[11px] uppercase tracking-widest text-[#86efac] font-semibold mt-1">
-              "Cleanse | Treat | Brighten"
-            </p>
-            <p class="text-xs text-[#9bb0a3] mt-2 leading-relaxed font-light">
-              Deep moss emerald forest tones, organic weathered stone pedestals, natural sunbeams, and warm gold foil typography. Harmonizes the <strong>Advance Clear Kit</strong> and <strong>Gold Bright Night Cream</strong> into one holistic restorative ritual.
-            </p>
-          </div>
-
-          <!-- Key Design Attributes -->
-          <div class="grid grid-cols-2 gap-2 text-[10px] pt-3 border-t border-[#1d3d2a] text-[#c1d9c9]">
-            <div class="p-2 rounded-xl bg-[#0d2218] border border-[#1b3e2a]">
-              <strong class="text-white block">Palette:</strong> Forest Moss, Gold Foil, Raw Stone
-            </div>
-            <div class="p-2 rounded-xl bg-[#0d2218] border border-[#1b3e2a]">
-              <strong class="text-white block">Typography:</strong> Cinzel Display × Cormorant
-            </div>
-          </div>
-        </div>
-
-        <div class="pt-5 space-y-2">
-          <button onclick="switchTheme('botanique')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition shadow-lg flex items-center justify-center gap-2 hover:scale-[1.02]" style="background: linear-gradient(135deg, #f5d485, #d4a843); color: #070605;">
-            <span>🌿</span> Activate Atelier Botanique Theme
-          </button>
-          <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I%20love%20the%20Atelier%20Botanique%20design%20(Complete%20Care%20for%20Radiant%20Skin)%20and%20would%20like%20to%20order" target="_blank" onclick="playChime(659.25)" class="w-full py-2.5 rounded-xl border border-[#2a503b] text-[11px] font-semibold text-[#86efac] hover:bg-[#1b3d2b] text-center transition block">
-            Order Complete Ritual via WhatsApp →
-          </a>
-        </div>
-      </div>
-
-      <!-- DESIGN 2: ROYAL MOLTEN NOIR -->
-      <div class="holo-card rounded-3xl p-6 flex flex-col justify-between border-2 border-[#594228] hover:border-[var(--gold-bright)] shadow-2xl transition-all duration-500 group relative overflow-hidden bg-gradient-to-b from-[#18130d] via-[#100d08] to-[#070605]">
-        <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-[var(--gold-primary)]/15 blur-3xl pointer-events-none"></div>
-
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-[10px] font-extrabold px-3 py-1 rounded-full bg-[#2e2113] text-[#f5d485] border border-[#594228] uppercase tracking-wider">
-              DIRECTION 2 • ICONIC FLAGSHIP
-            </span>
-            <span class="text-xs text-[var(--gold-bright)] font-serif italic">Molten Noir</span>
-          </div>
-
-          <!-- Creative Image with zoom effect -->
-          <div class="relative rounded-2xl overflow-hidden aspect-[4/5] border border-[#3b2b1a] group-hover:border-[var(--gold-primary)] transition duration-500 shadow-xl">
-            <img src="assets/lumora_campaign_onyx.jpg" alt="Lumora Royal Molten Noir: Pure Cellular Illumination" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
-            
-            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-white">
-              <span class="bg-black/70 backdrop-blur px-2.5 py-1 rounded-lg border border-white/10 font-medium">👑 Black Obsidian & Liquid 24K Gold</span>
-              <span class="bg-[#d4a843] text-black px-2 py-0.5 rounded font-bold text-[10px]">HAUTE LUXURY</span>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-2xl font-light editorial-font text-white group-hover:text-[var(--gold-bright)] transition">
-              Royal Molten Noir Flagship
-            </h4>
-            <p class="text-[11px] uppercase tracking-widest text-[#f5d485] font-semibold mt-1">
-              "Pure Cellular Illumination"
-            </p>
-            <p class="text-xs text-[#a6927d] mt-2 leading-relaxed font-light">
-              Obsidian marble pedestals, velvet noir luxury shadows, and interactive 24K molten gold particle fluid simulation. Tailored for ultra-high-ticket luxury perception, showcasing the <strong>30g (₹3,000)</strong> & <strong>15g (₹1,800)</strong> Gold Packs.
-            </p>
-          </div>
-
-          <!-- Key Design Attributes -->
-          <div class="grid grid-cols-2 gap-2 text-[10px] pt-3 border-t border-[#2e2316] text-[#cbb69e]">
-            <div class="p-2 rounded-xl bg-[#140f0a] border border-[#2e2316]">
-              <strong class="text-white block">Palette:</strong> Obsidian Noir, 24K Molten Gold
-            </div>
-            <div class="p-2 rounded-xl bg-[#140f0a] border border-[#2e2316]">
-              <strong class="text-white block">Features:</strong> 24K Canvas Physics & VIP Pass
-            </div>
-          </div>
-        </div>
-
-        <div class="pt-5 space-y-2">
-          <button onclick="switchTheme('royal-gold')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition shadow-lg flex items-center justify-center gap-2 hover:scale-[1.02]" style="background: linear-gradient(135deg, #f5d485, #d4a843); color: #070605;">
-            <span>👑</span> Activate Royal Molten Noir Theme
-          </button>
-          <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I%20love%20the%20Royal%20Molten%20Noir%20theme%20and%20would%20like%20to%20order%20the%20Gold%20Flagship" target="_blank" onclick="playChime(659.25)" class="w-full py-2.5 rounded-xl border border-[#594228] text-[11px] font-semibold text-[#f5d485] hover:bg-[#2e2113] text-center transition block">
-            Order Gold Flagship via WhatsApp →
-          </a>
-        </div>
-      </div>
-
-      <!-- DESIGN 3: SEOUL CLINICAL DEW -->
-      <div class="holo-card rounded-3xl p-6 flex flex-col justify-between border-2 border-[#1e3a5f] hover:border-[#38bdf8] shadow-2xl transition-all duration-500 group relative overflow-hidden bg-gradient-to-b from-[#0e1a2e] via-[#09111e] to-[#050a12]">
-        <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-[#38bdf8]/15 blur-3xl pointer-events-none"></div>
-
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-[10px] font-extrabold px-3 py-1 rounded-full bg-[#132c4a] text-[#7dd3fc] border border-[#1e4875] uppercase tracking-wider">
-              DIRECTION 3 • GLASS SKIN SOCIAL
-            </span>
-            <span class="text-xs text-[#7dd3fc] font-serif italic">Seoul Clinical Dew</span>
-          </div>
-
-          <!-- Creative Image with zoom effect -->
-          <div class="relative rounded-2xl overflow-hidden aspect-[4/5] border border-[#1e3a5f] group-hover:border-[#38bdf8] transition duration-500 shadow-xl">
-            <img src="assets/lumora_campaign_crystal.jpg" alt="Lumora Seoul Clinical Dew: Cellular Radiance Protocol" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
-            
-            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-white">
-              <span class="bg-black/70 backdrop-blur px-2.5 py-1 rounded-lg border border-white/10 font-medium">💎 Frosted Silica & Pure Water Caustics</span>
-              <span class="bg-[#38bdf8] text-black px-2 py-0.5 rounded font-bold text-[10px]">GLASS SKIN</span>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-2xl font-light editorial-font text-white group-hover:text-[#38bdf8] transition">
-              Seoul Clinical Dew & Glass Alchemy
-            </h4>
-            <p class="text-[11px] uppercase tracking-widest text-[#7dd3fc] font-semibold mt-1">
-              "Micro-Dose Resurfacing & Barrier Lock"
-            </p>
-            <p class="text-xs text-[#94a3b8] mt-2 leading-relaxed font-light">
-              Pristine frosted glass blocks, morning water ripples, and ultra-crisp clinical glassmorphism. Optimized for viral social commerce, direct Meta/Instagram ad traffic, sticky mobile checkout, and the <strong>14-Day Dual-Wipe</strong> clinical test.
-            </p>
-          </div>
-
-          <!-- Key Design Attributes -->
-          <div class="grid grid-cols-2 gap-2 text-[10px] pt-3 border-t border-[#172c47] text-[#93b4d4]">
-            <div class="p-2 rounded-xl bg-[#0c1829] border border-[#172c47]">
-              <strong class="text-white block">Palette:</strong> Frosted Glass, Ice Blue, Rose Gold
-            </div>
-            <div class="p-2 rounded-xl bg-[#0c1829] border border-[#172c47]">
-              <strong class="text-white block">Features:</strong> Microscopic Zoom & Sticky Bar
-            </div>
-          </div>
-        </div>
-
-        <div class="pt-5 space-y-2">
-          <button onclick="switchTheme('glass-dew')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-widest transition shadow-lg flex items-center justify-center gap-2 hover:scale-[1.02] bg-[#38bdf8] text-black hover:bg-[#7dd3fc]">
-            <span>💎</span> Activate Seoul Glass Dew Theme
-          </button>
-          <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I%20love%20the%20Seoul%20Glass%20Dew%20theme%20and%20would%20like%20to%20order%20the%20Advance%20Clear%20Kit" target="_blank" onclick="playChime(659.25)" class="w-full py-2.5 rounded-xl border border-[#1e3a5f] text-[11px] font-semibold text-[#7dd3fc] hover:bg-[#132c4a] text-center transition block">
-            Order Clear Kit via WhatsApp →
-          </a>
         </div>
       </div>
 
@@ -1096,25 +849,8 @@
       dot.style.top = e.clientY + 'px';
     });
 
-    // Theme Switcher
+    // Default Theme Enforcer
     function switchTheme(theme) {
-      document.body.className = `theme-${theme} antialiased selection:bg-[#d4a843] selection:text-black`;
-      
-      const bBotanique = document.getElementById('theme-btn-botanique');
-      const bRoyal = document.getElementById('theme-btn-royal');
-      const bGlass = document.getElementById('theme-btn-glass');
-
-      [bBotanique, bRoyal, bGlass].forEach(b => {
-        if (b) b.className = "px-3.5 py-1.5 rounded-xl font-medium text-[#a6927d] hover:text-white transition flex items-center gap-1.5";
-      });
-
-      if (theme === 'botanique') {
-        if (bBotanique) bBotanique.className = "px-3.5 py-1.5 rounded-xl font-bold bg-[#152d20] border border-[#d4a843] text-[#f5d485] shadow-lg transition flex items-center gap-1.5";
-      } else if (theme === 'glass-dew' || theme === 'glass-skin') {
-        if (bGlass) bGlass.className = "px-3.5 py-1.5 rounded-xl font-bold bg-[#0284c7] text-white shadow-lg transition flex items-center gap-1.5";
-      } else {
-        if (bRoyal) bRoyal.className = "px-3.5 py-1.5 rounded-xl font-bold bg-[#d4a843] text-black shadow-lg transition flex items-center gap-1.5";
-      }
       playChime(659.25);
     }
 
