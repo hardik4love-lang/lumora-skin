@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" fill="none" class="w-auto h-24">
+  <defs>
+    <linearGradient id="lumoraGoldStacked" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff1d0"/>
+      <stop offset="30%" stop-color="#f5d485"/>
+      <stop offset="70%" stop-color="#d4a843"/>
+      <stop offset="100%" stop-color="#946a1d"/>
+    </linearGradient>
+    <linearGradient id="archGoldStacked" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fcedc7"/>
+      <stop offset="50%" stop-color="#d4a843"/>
+      <stop offset="100%" stop-color="#805b16"/>
+    </linearGradient>
+    <filter id="goldGlowStacked" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#d4a843" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- CENTER ARCH EMBLEM -->
+  <g transform="translate(76, 8)" filter="url(#goldGlowStacked)">
+    <!-- Roman Arch Outline -->
+    <path d="M 6 48 L 6 20 A 18 18 0 0 1 42 20 L 42 48" fill="none" stroke="url(#archGoldStacked)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Base Foot Line -->
+    <line x1="2" y1="48" x2="46" y2="48" stroke="url(#archGoldStacked)" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Roman Serif L Monogram -->
+    <path d="M 17 19 L 23 19 L 23 40 L 33 40 L 33 43 L 17 43 Z" fill="url(#lumoraGoldStacked)"/>
+    <path d="M 15 19 L 23 19 L 23 21 L 15 21 Z" fill="url(#lumoraGoldStacked)"/>
+
+    <!-- Botanical Leaf Sprig -->
+    <path d="M 23 22 Q 28 20 32 15" fill="none" stroke="url(#lumoraGoldStacked)" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M 27 20 Q 30 18 29 15 Q 26 17 27 20 Z" fill="url(#lumoraGoldStacked)"/>
+    <path d="M 31 16 Q 35 15 35 12 Q 31 13 31 16 Z" fill="url(#lumoraGoldStacked)"/>
+    <path d="M 32 15 Q 36 13 36 10 Q 33 11 32 15 Z" fill="url(#lumoraGoldStacked)"/>
+  </g>
+
+  <!-- LUMORA WORDMARK -->
+  <text x="100" y="86" 
+        text-anchor="middle"
+        font-family="'Cinzel', 'Cormorant Garamond', serif" 
+        font-size="26" 
+        font-weight="600" 
+        letter-spacing="7" 
+        fill="url(#lumoraGoldStacked)" 
+        filter="url(#goldGlowStacked)">LUMORA</text>
+
+  <!-- SKINCARE -->
+  <text x="100" y="104" 
+        text-anchor="middle"
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-size="8.5" 
+        font-weight="500" 
+        letter-spacing="6.5" 
+        fill="#cbb396">SKINCARE</text>
+  
+  <text x="100" y="118" 
+        text-anchor="middle"
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-size="6.5" 
+        font-weight="400" 
+        letter-spacing="3" 
+        fill="#8c7a65">HAUTE CELLULAR FORMULATION</text>
+</svg>
