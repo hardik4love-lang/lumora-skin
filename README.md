@@ -27,9 +27,11 @@ Official digital storefront and Meta/WhatsApp conversational sales engine for **
 2. **Advance Two-Step Clear Skin Kit** — **₹5,000**
    - *Step 1:* Tiny Pure Vitamin C Active Booster Bottle (concentrated L-Ascorbic Acid & Ferulic active in amber glass ampoule vial).
    - *Step 2:* Clinical Treatment Sachet Pouch (exact dimensions: 2" height × 1.5" width) containing single-use sterile active bio-ferment & spot-clearing complex.
-3. **Radiance Infusion Serum (30ml)** — **₹2,000**
-   - 5% Niacinamide, 2% Tranexamic Acid (TXA), Copper Tripeptides (GHK-Cu).
-4. **The Complete Transformation Trio Bundle** — **₹7,999** (MRP ₹11,000 • Save ₹3,001).
+3. **NEW: Lumora Body Whitening Oil** — **₹2,200** (MRP ₹3,000 • 27% OFF)
+   - Skin Lightening Serum Formulation housed in a luxury gold & graphite cylinder pump. Reveals fairer, smoother, and healthier-looking skin while reducing body dark spots and uneven tone.
+4. **Radiance Infusion Serum (30ml)** — **₹2,000** • **[OUT OF STOCK / COMING SOON]**
+   - 5% Niacinamide, 2% Tranexamic Acid (TXA), Copper Tripeptides (GHK-Cu). Current batch sold out; waitlist open via WhatsApp (+91 88408 27259).
+5. **The Radiant Skin Duo (Gold Pack 30g + Advance Clear Kit)** — **₹6,999** (MRP ₹9,000 • Save ₹2,001).
 
 ## WhatsApp Automation & Lead Forwarding
 - **Verified WhatsApp Line:** `+91 88408 27259` (`https://wa.me/918840827259`)
