@@ -6,7 +6,9 @@ Official digital storefront and Meta/WhatsApp conversational sales engine for **
 - **Live URL:** [https://hardik4love-lang.github.io/lumora-skin/](https://hardik4love-lang.github.io/lumora-skin/)
 
 ## Featured Product Lineup
-1. **The Gold Flagship: Lumora 24K Gold Bright Night Pack (50ml)** — **₹3,000** (MRP ₹4,000 • 25% OFF)
+1. **The Gold Flagship: Lumora 24K Gold Bright Night Pack**
+   - **30g Full Ritual:** **₹3,000** (MRP ₹4,000 • 25% OFF)
+   - **15g Discovery Ritual:** **₹1,800** (MRP ₹2,500 • 28% OFF)
    - *Active Actives:* 24K Colloidal Gold, Pure Kashmiri Saffron, Glutathione, Alpha-Arbutin, Ceramides NP/AP/EOP, Squalane.
 2. **Advance Two-Step Clear Skin Kit** — **₹5,000**
    - *Step 1:* Tiny Pure Vitamin C Active Booster Bottle (concentrated L-Ascorbic Acid & Ferulic active in amber glass ampoule vial).

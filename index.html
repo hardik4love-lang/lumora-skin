@@ -230,7 +230,7 @@
 
         <div class="flex flex-wrap items-center gap-4 pt-4">
           <a href="#gold-flagship" class="px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold shadow-2xl transition hover:scale-105" style="background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep)); color: #070605;">
-            👑 The Gold Flagship (₹3,000)
+            👑 The Gold Flagship (30g ₹3,000 • 15g ₹1,800)
           </a>
           
           <a href="#clear-kit" class="px-7 py-4 rounded-full border border-[var(--border)] bg-[var(--bg-surface)]/80 backdrop-blur text-xs uppercase tracking-widest font-semibold hover:border-[var(--gold-primary)] text-[var(--text-main)] transition">
@@ -323,17 +323,48 @@
       <div class="lg:col-span-7 space-y-6">
         <div>
           <div class="flex items-center justify-between">
-            <span class="text-xs uppercase tracking-widest text-[var(--gold-bright)] font-bold">50ML CRYSTAL PACK • pH 5.5 BALANCED</span>
+            <span id="gold-pack-badge" class="text-xs uppercase tracking-widest text-[var(--gold-bright)] font-bold">30G FULL RITUAL • pH 5.5 BALANCED</span>
             <div class="flex items-baseline gap-2">
-              <span class="text-sm line-through text-[var(--text-muted)]">₹4,000</span>
-              <span class="text-3xl font-normal display-font text-[var(--text-main)]">₹3,000</span>
-              <span class="text-[10px] font-bold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">SAVE ₹1,000</span>
+              <span id="gold-pack-mrp" class="text-sm line-through text-[var(--text-muted)]">₹4,000</span>
+              <span id="gold-pack-price" class="text-3xl font-normal display-font text-[var(--text-main)]">₹3,000</span>
+              <span id="gold-pack-save" class="text-[10px] font-bold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">SAVE ₹1,000 (25% OFF)</span>
             </div>
           </div>
           <h4 class="text-3xl md:text-4xl font-light editorial-font text-[var(--text-main)] mt-2">Lumora Gold Bright Night Pack</h4>
           <p class="text-xs md:text-sm text-[var(--text-muted)] mt-2 leading-relaxed">
             Housed in Lumora's signature faceted crystal jar with a brushed gold screw lid. This intensive overnight emulsion accelerates cellular turnover, repairs compromised lipid barriers, and delivers pure 24K gold and Kashmiri saffron deep into the dermal matrix.
           </p>
+
+          <!-- Interactive Size/Variant Selector -->
+          <div class="mt-4 pt-3 border-t border-[var(--border)]">
+            <div class="text-[11px] uppercase tracking-wider text-[var(--text-muted)] font-semibold mb-2 flex items-center justify-between">
+              <span>Select Ritual Variant:</span>
+              <span id="gold-selected-label" class="text-[var(--gold-bright)] font-bold">30g Full Ritual</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <button id="btn-gold-30g" type="button" onclick="selectGoldVariant('30g')" class="p-3 rounded-2xl border-2 border-[var(--gold-primary)] bg-[var(--bg-surface)] text-left transition flex items-center justify-between group shadow-lg">
+                <div>
+                  <div class="font-bold text-white text-xs flex items-center gap-1.5">
+                    <span>👑 30 Grams</span>
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-[var(--gold-primary)] text-black font-extrabold uppercase">Full</span>
+                  </div>
+                  <div class="text-[11px] text-[var(--text-muted)] mt-0.5"><span class="line-through mr-1">₹4,000</span><strong class="text-[var(--gold-bright)]">₹3,000</strong></div>
+                </div>
+                <span class="text-xs text-emerald-400 font-bold">-25%</span>
+              </button>
+
+              <button id="btn-gold-15g" type="button" onclick="selectGoldVariant('15g')" class="p-3 rounded-2xl border border-[var(--border)] bg-[var(--bg-surface)]/60 hover:border-[var(--gold-primary)] text-left transition flex items-center justify-between group">
+                <div>
+                  <div class="font-bold text-[#cfc2b2] group-hover:text-white text-xs flex items-center gap-1.5">
+                    <span>✨ 15 Grams</span>
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-white/10 text-white font-semibold uppercase">Discovery</span>
+                  </div>
+                  <div class="text-[11px] text-[var(--text-muted)] mt-0.5"><span class="line-through mr-1">₹2,500</span><strong class="text-white">₹1,800</strong></div>
+                </div>
+                <span class="text-xs text-emerald-400 font-bold">-28%</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-2 border-t border-[var(--border)]">
@@ -356,8 +387,8 @@
         </div>
 
         <div class="flex flex-wrap gap-4 pt-4 border-t border-[var(--border)]">
-          <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(Discounted%20₹3,000%20%7C%20MRP%20₹4,000)%20%23LUM-GOLD-8840" target="_blank" onclick="playChime(659.25)" class="flex-1 py-4 rounded-xl text-xs uppercase tracking-widest font-bold shadow-xl text-center transition hover:scale-105" style="background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep)); color: #070605;">
-            Order The Gold Flagship (₹3,000) via WhatsApp
+          <a id="gold-cta-btn" href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(30g%20-%20₹3,000%20%7C%20MRP%20₹4,000)%20%23LUM-GOLD-30G-8840" target="_blank" onclick="playChime(659.25)" class="flex-1 py-4 rounded-xl text-xs uppercase tracking-widest font-bold shadow-xl text-center transition hover:scale-105" style="background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep)); color: #070605;">
+            Order 30g Gold Flagship (₹3,000) via WhatsApp
           </a>
         </div>
       </div>
@@ -540,15 +571,15 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
       <!-- Item 1: Gold Bright Pack -->
-      <div class="holo-card rounded-3xl p-6 flex flex-col justify-between space-y-5 border border-[var(--border)] shadow-xl">
+      <div class="holo-card rounded-3xl p-6 flex flex-col justify-between space-y-5 border border-[var(--gold-primary)]/40 shadow-xl">
         <div class="space-y-4">
           <div class="flex justify-between items-start">
-            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[var(--bg-surface)] text-[var(--gold-bright)] border border-[var(--border)]">
-              GOLD FLAGSHIP
+            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[var(--bg-surface)] text-[var(--gold-bright)] border border-[var(--gold-primary)]/40">
+              GOLD FLAGSHIP • 2 SIZES
             </span>
-            <div class="flex items-baseline gap-1.5">
-              <span class="text-xs line-through text-[var(--text-muted)]">₹4,000</span>
-              <span class="text-2xl font-light display-font text-[var(--text-main)]">₹3,000</span>
+            <div class="flex flex-col items-end">
+              <span class="text-[10px] uppercase tracking-wider text-[var(--text-muted)]">From</span>
+              <span class="text-2xl font-light display-font text-[var(--text-main)]">₹1,800</span>
             </div>
           </div>
 
@@ -558,17 +589,33 @@
 
           <div>
             <h4 class="text-xl font-normal editorial-font text-[var(--text-main)]">Gold Bright Night Pack</h4>
-            <p class="text-xs text-[var(--text-muted)] mt-1">50ml Heavy Crystal Jar • 24K Saffron & Glutathione</p>
+            <p class="text-xs text-[var(--text-muted)] mt-1">30g Full & 15g Discovery • 24K Saffron & Glutathione</p>
           </div>
 
           <p class="text-xs text-[var(--text-muted)] leading-relaxed">
             Signature night repair emulsion. Reverses dark spots and seals in all-night cellular hydration.
           </p>
+
+          <div class="space-y-1.5 pt-2 border-t border-[var(--border)] text-xs">
+            <div class="flex justify-between items-center text-[11px] p-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border)]">
+              <span class="text-[var(--gold-bright)] font-semibold flex items-center gap-1">👑 30g Full Ritual</span>
+              <span><span class="line-through text-[var(--text-muted)] mr-1.5 text-[10px]">₹4,000</span><strong class="text-white text-xs">₹3,000</strong></span>
+            </div>
+            <div class="flex justify-between items-center text-[11px] p-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border)]">
+              <span class="text-[#cfc2b2] font-semibold flex items-center gap-1">✨ 15g Discovery</span>
+              <span><span class="line-through text-[var(--text-muted)] mr-1.5 text-[10px]">₹2,500</span><strong class="text-white text-xs">₹1,800</strong></span>
+            </div>
+          </div>
         </div>
 
-        <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(Discounted%20₹3,000%20%7C%20MRP%20₹4,000)%20%23LUM-GOLD-8840" target="_blank" onclick="playChime(659.25)" class="w-full py-3 rounded-xl border border-[var(--border)] text-xs font-bold hover:border-[var(--gold-primary)] text-white text-center transition">
-          WhatsApp Order — ₹3,000 (MRP ₹4,000)
-        </a>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-[var(--border)]">
+          <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(30g%20-%20₹3,000%20%7C%20MRP%20₹4,000)%20%23LUM-GOLD-30G-8840" target="_blank" onclick="playChime(659.25)" class="py-2.5 px-1 rounded-xl border border-[var(--gold-primary)] bg-[var(--gold-primary)]/15 text-[11px] font-bold text-[var(--gold-bright)] hover:bg-[var(--gold-primary)] hover:text-black text-center transition">
+            Order 30g (₹3,000)
+          </a>
+          <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(15g%20-%20₹1,800%20%7C%20MRP%20₹2,500)%20%23LUM-GOLD-15G-8840" target="_blank" onclick="playChime(659.25)" class="py-2.5 px-1 rounded-xl border border-[var(--border)] hover:border-[var(--gold-primary)] text-[11px] font-bold text-white text-center transition">
+            Order 15g (₹1,800)
+          </a>
+        </div>
       </div>
 
       <!-- Item 2: Advance Two-Step Clear Skin Kit -->
@@ -818,6 +865,40 @@
       }
     }
 
+    function selectGoldVariant(variant) {
+      playChime(659.25);
+      const b30 = document.getElementById('btn-gold-30g');
+      const b15 = document.getElementById('btn-gold-15g');
+      const badge = document.getElementById('gold-pack-badge');
+      const mrp = document.getElementById('gold-pack-mrp');
+      const price = document.getElementById('gold-pack-price');
+      const save = document.getElementById('gold-pack-save');
+      const label = document.getElementById('gold-selected-label');
+      const cta = document.getElementById('gold-cta-btn');
+
+      if (variant === '15g') {
+        b15.className = "p-3 rounded-2xl border-2 border-[var(--gold-primary)] bg-[var(--bg-surface)] text-left transition flex items-center justify-between group shadow-lg";
+        b30.className = "p-3 rounded-2xl border border-[var(--border)] bg-[var(--bg-surface)]/60 hover:border-[var(--gold-primary)] text-left transition flex items-center justify-between group";
+        badge.innerText = "15G DISCOVERY RITUAL • pH 5.5 BALANCED";
+        mrp.innerText = "₹2,500";
+        price.innerText = "₹1,800";
+        save.innerText = "SAVE ₹700 (28% OFF)";
+        label.innerText = "15g Discovery Ritual";
+        cta.innerText = "Order 15g Gold Flagship (₹1,800) via WhatsApp";
+        cta.href = "https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(15g%20-%20₹1,800%20%7C%20MRP%20₹2,500)%20%23LUM-GOLD-15G-8840";
+      } else {
+        b30.className = "p-3 rounded-2xl border-2 border-[var(--gold-primary)] bg-[var(--bg-surface)] text-left transition flex items-center justify-between group shadow-lg";
+        b15.className = "p-3 rounded-2xl border border-[var(--border)] bg-[var(--bg-surface)]/60 hover:border-[var(--gold-primary)] text-left transition flex items-center justify-between group";
+        badge.innerText = "30G FULL RITUAL • pH 5.5 BALANCED";
+        mrp.innerText = "₹4,000";
+        price.innerText = "₹3,000";
+        save.innerText = "SAVE ₹1,000 (25% OFF)";
+        label.innerText = "30g Full Ritual";
+        cta.innerText = "Order 30g Gold Flagship (₹3,000) via WhatsApp";
+        cta.href = "https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(30g%20-%20₹3,000%20%7C%20MRP%20₹4,000)%20%23LUM-GOLD-30G-8840";
+      }
+    }
+
     // Canvas Molten Gold Interactive Fluid Simulation
     const canvas = document.getElementById('gold-fluid-canvas');
     const ctx = canvas.getContext('2d');
@@ -961,13 +1042,19 @@
     function generateSpecialistReply(query) {
       const q = query.toLowerCase();
 
-      if (q.includes('gold') || q.includes('flagship') || q.includes('night pack') || q.includes('cream')) {
+      if (q.includes('gold') || q.includes('flagship') || q.includes('night pack') || q.includes('cream') || q.includes('bright') || q.includes('pack') || q.includes('15g') || q.includes('30g')) {
         return `
           <div class="font-bold text-[#f5d485] text-xs">👑 The Gold Flagship: Lumora 24K Gold Bright Night Pack</div>
-          <p class="text-[11px] text-[#b8a594]">Our crown jewel 50ml crystal pack formulated with <strong>24K Colloidal Gold, Pure Kashmiri Saffron, Glutathione, Alpha-Arbutin</strong>, and <strong>Triple Ceramides</strong>. It repairs compromised barriers and clears hyperpigmentation while you sleep.</p>
-          <div class="flex items-center justify-between pt-1">
-            <span class="font-bold text-white text-xs"><span class="line-through text-[#8c7b6c] text-[10px] mr-1">₹4,000</span>₹3,000</span>
-            <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(Discounted%20₹3,000%20%7C%20MRP%20₹4,000)%20%23LUM-GOLD-8840" target="_blank" class="px-2.5 py-1 rounded bg-[#d4a843] text-black font-bold text-[10px] hover:bg-[#f5d485]">Order via WhatsApp →</a>
+          <p class="text-[11px] text-[#b8a594]">Formulated with <strong>24K Colloidal Gold, Pure Kashmiri Saffron, Glutathione, Alpha-Arbutin</strong>, and <strong>Triple Ceramides</strong>. It repairs compromised barriers and clears hyperpigmentation overnight.</p>
+          <div class="space-y-1.5 pt-1 text-[11px]">
+            <div class="flex items-center justify-between p-2 rounded-xl bg-black/40 border border-[#3b2b1a]">
+              <span>👑 <strong>30g Full Ritual:</strong> <span class="line-through text-[#8c7b6c] text-[10px] mr-1">₹4,000</span><strong class="text-white text-xs">₹3,000</strong></span>
+              <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(30g%20-%20₹3,000%20%7C%20MRP%20₹4,000)%20%23LUM-GOLD-30G-8840" target="_blank" class="px-2 py-0.5 rounded bg-[#d4a843] text-black font-bold text-[9px] hover:bg-[#f5d485]">Order 30g →</a>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-xl bg-black/40 border border-[#3b2b1a]">
+              <span>✨ <strong>15g Discovery:</strong> <span class="line-through text-[#8c7b6c] text-[10px] mr-1">₹2,500</span><strong class="text-white text-xs">₹1,800</strong></span>
+              <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(15g%20-%20₹1,800%20%7C%20MRP%20₹2,500)%20%23LUM-GOLD-15G-8840" target="_blank" class="px-2 py-0.5 rounded bg-white/20 text-white font-bold text-[9px] hover:bg-white/40">Order 15g →</a>
+            </div>
           </div>
         `;
       }
@@ -1054,7 +1141,7 @@
           <div class="p-3.5 rounded-2xl rounded-tl-sm bg-[#1e1711] border border-[#3b2b1a] text-[#fbf8f3] space-y-1.5">
             <p class="font-medium text-white">Hello! I am your Lumora Specialist Agent. ✨</p>
             <p class="text-[11px] text-[#b8a594] leading-relaxed">
-              I have complete clinical specifications and updated pricing for our <strong>Gold Flagship</strong> (24K Gold Bright Night Pack: MRP ₹4,000, now ₹3,000), the <strong>Advance Two-Step Clear Skin Kit</strong> (₹5,000 — tiny Vit C bottle + 2"×1.5" pouch), and our <strong>Radiance Infusion Serum</strong> (₹2,000).
+              I have complete clinical specifications and updated pricing for our <strong>Gold Flagship</strong> (30g: MRP ₹4,000 → ₹3,000 | new 15g: MRP ₹2,500 → ₹1,800), the <strong>Advance Two-Step Clear Skin Kit</strong> (₹5,000 — tiny Vit C bottle + 2"×1.5" pouch), and our <strong>Radiance Infusion Serum</strong> (₹2,000).
             </p>
             <p class="text-[11px] text-[#d4a843] font-semibold">How can I assist your skincare routine today?</p>
           </div>
