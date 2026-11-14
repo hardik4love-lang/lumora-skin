@@ -9,8 +9,8 @@ Official digital storefront and Meta/WhatsApp conversational sales engine for **
 1. **The Gold Flagship: Lumora 24K Gold Bright Night Pack (50ml)** — ₹1,699
    - *Active Actives:* 24K Colloidal Gold, Pure Kashmiri Saffron, Glutathione, Alpha-Arbutin, Ceramides NP/AP/EOP, Squalane.
 2. **Advance Two-Step Clear Skin Kit** — ₹1,899
-   - *Step 1:* 50ml Deep Pore Clarifying Cleanser (Salicylic & Glycolic complex).
-   - *Step 2:* 10x 3ml Professional Active Treatment Sachets.
+   - *Step 1:* Tiny Pure Vitamin C Active Booster Bottle (concentrated L-Ascorbic Acid & Ferulic active in amber glass ampoule vial).
+   - *Step 2:* Clinical Treatment Sachet Pouch (exact dimensions: 2" height × 1.5" width) containing single-use sterile active bio-ferment & spot-clearing complex.
 3. **Radiance Infusion Serum (30ml)** — ₹1,499
    - 5% Niacinamide, 2% Tranexamic Acid (TXA), Copper Tripeptides (GHK-Cu).
 4. **The Complete Transformation Trio Bundle** — ₹3,999 (Save ₹1,098).
