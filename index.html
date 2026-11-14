@@ -3,866 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUMORA SKIN — Haute Cellular Radiance Flagship & WhatsApp Commerce</title>
+  <meta name="description" content="Lumora Skin — brand identity audit, domain strategy, and premium website concepts for the LUMORA SKIN digital boutique.">
+  <title>LUMORA SKIN | Brand Identity &amp; Digital Framework</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap');
-
-    /* Theme Presets */
-    .theme-royal-gold {
-      --bg-dark: #070605;
-      --bg-surface: #110e0a;
-      --bg-card: #18130d;
-      --gold-primary: #d4a843;
-      --gold-bright: #f5d485;
-      --gold-deep: #8f651b;
-      --text-main: #fcf9f4;
-      --text-muted: #a6927d;
-      --border: #2e2316;
-      --font-display: 'Cinzel', serif;
-      --font-editorial: 'Cormorant Garamond', serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    :root{
+      --onyx:#0b0a09; --onyx-soft:#161411; --cream:#f6f2ea; --cream-soft:#efe9da;
+      --gold:#c9a227; --gold-bright:#f5d485; --gold-deep:#8f651b; --gold-soft:#4a3b23;
+      --rose:#e8b4c8; --jade:#2d6a4f; --tiger:#b8860b;
+      --text:#0a0908; --muted:#6e6558; --border:#e7dfcb;
+      --font-display:'Cinzel',serif; --font-ed:'Cormorant Garamond',serif; --font-ui:'Plus Jakarta Sans',sans-serif;
     }
-
-    .theme-clinical-lab {
-      --bg-dark: #f8fafc;
-      --bg-surface: #ffffff;
-      --bg-card: #f1f5f9;
-      --gold-primary: #0284c7;
-      --gold-bright: #38bdf8;
-      --gold-deep: #0369a1;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --border: #cbd5e1;
-      --font-display: 'Space Grotesk', sans-serif;
-      --font-editorial: 'Space Grotesk', sans-serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    .theme-glass-skin {
-      --bg-dark: #090c14;
-      --bg-surface: #111624;
-      --bg-card: #161e30;
-      --gold-primary: #ec4899;
-      --gold-bright: #f472b6;
-      --gold-deep: #be185d;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --border: #29354d;
-      --font-display: 'Cormorant Garamond', serif;
-      --font-editorial: 'Cormorant Garamond', serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: var(--font-sans);
-      overflow-x: hidden;
-      transition: background-color 0.5s ease, color 0.5s ease;
-    }
-
-    .display-font { font-family: var(--font-display); }
-    .editorial-font { font-family: var(--font-editorial); }
-
-    /* Custom Luxury Cursor */
-    #luxury-cursor {
-      pointer-events: none;
-      position: fixed;
-      width: 24px;
-      height: 24px;
-      border: 1px solid var(--gold-primary);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width 0.2s, height 0.2s;
-      z-index: 9999;
-      mix-blend-mode: difference;
-    }
-    #luxury-dot {
-      pointer-events: none;
-      position: fixed;
-      width: 4px;
-      height: 4px;
-      background: var(--gold-bright);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10000;
-    }
-
-    /* 3D Holographic Card & Caustics */
-    .holo-card {
-      background: linear-gradient(135deg, rgba(212,168,67,0.12) 0%, rgba(20,16,12,0.85) 100%);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 1px 1px rgba(245,212,133,0.3);
-      backdrop-filter: blur(16px);
-      transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease;
-      transform-style: preserve-3d;
-    }
-    .holo-card:hover {
-      box-shadow: 0 30px 60px rgba(212,168,67,0.25), inset 0 1px 2px rgba(245,212,133,0.5);
-    }
-
-    @keyframes goldenPulse {
-      0%, 100% { opacity: 0.25; transform: scale(0.98); }
-      50% { opacity: 0.55; transform: scale(1.02); }
-    }
-    .gold-aura {
-      animation: goldenPulse 6s ease-in-out infinite;
-    }
-
-    /* Range slider custom styling */
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      height: 30px;
-      width: 30px;
-      border-radius: 50%;
-      background: #d4a843;
-      border: 3px solid #ffffff;
-      box-shadow: 0 0 16px rgba(212, 168, 67, 0.9);
-      cursor: ew-resize;
-    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--onyx);color:var(--text);font-family:var(--font-ui);-webkit-font-smoothing:antialiased}
+    .display{font-family:var(--font-display);letter-spacing:0.02em}
+    .ed{font-family:var(--font-ed);font-style:italic}
+    .ui{font-family:var(--font-ui)}
+    a{color:var(--gold-deep);text-decoration:none}
+    a:hover{color:var(--gold-bright)}
+    .container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+    .section{padding:7rem 0}
+    .section-title{font-family:var(--font-display);font-size:3rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--cream);margin:0 0 1rem}
+    .section-kicker{font-family:var(--font-ui);font-size:0.85rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-bright);font-weight:700;margin:0 0 0.75rem;display:block}
+    .subhead{font-family:var(--font-ed);font-size:1.35rem;color:var(--cream-soft);max-width:720px;line-height:1.6;margin:0 0 3rem}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    @media (max-width:900px){.grid3{grid-template-columns:1fr}}
+    .card{background:var(--onyx-soft);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:transform .25s,border-color .25s}
+    .card:hover{transform:translateY(-4px);border-color:var(--gold-soft)}
+    .card h3{font-family:var(--font-display);font-size:1.35rem;margin:0 0 .75rem;color:var(--cream)}
+    .card p{color:#c9bda3;line-height:1.6;margin:0 0 1rem;font-size:0.95rem}
+    .swatch{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:inline-block;margin-right:.6rem;vertical-align:middle}
+    .chip{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:.25rem .65rem;border-radius:999px;border:1px solid var(--border);color:var(--gold-bright);margin-bottom:.5rem}
+    .hero{position:relative;padding:10rem 0 6rem;overflow:hidden}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 0%, rgba(201,162,39,.12), transparent 60%);pointer-events:none}
+    .hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,5rem);letter-spacing:0.03em;line-height:1.05;color:var(--cream);margin:0 0 1rem}
+    .hero .ed{color:var(--gold-bright);font-style:italic}
+    .hero p{color:#c9bda3;font-size:1.1rem;max-width:620px;line-height:1.7;margin:0 0 2rem}
+    .nav{position:fixed;inset:0 0 auto 0;background:rgba(11,10,9,.7);backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid var(--border)}
+    .nav .container{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem}
+    .nav .brand{font-family:var(--font-display);font-size:1.35rem;color:var(--cream);letter-spacing:0.04em}
+    .nav a{color:#c9bda3;margin-left:1.75rem;font-size:0.9rem;font-weight:600}
+    .nav a:hover{color:var(--cream)}
+    .anchor{position:absolute;top:-90px;left:0;display:block}
+    .motto{font-size:.8rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--muted);font-weight:700}
+    .domain-set{background:var(--onyx-soft);border:1px solid var(--border);border-radius:16px;padding:1.75rem}
+    .domain-set h4{font-family:var(--font-display);font-size:1.15rem;margin:0 0 .5rem;color:var(--cream)}
+    .domain-set p{font-size:.85rem;color:#c9bda3;margin:0 0 1rem}
+    ul.domains{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+    ul.domains li{font-size:.9rem;color:#d8ceb6;padding:.35rem 0;border-bottom:1px dotted rgba(255,255,255,.06)}
+    ul.domains li::before{content:"• ";color:var(--gold-bright);font-weight:900}
+    .badge{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .5rem;border-radius:4px;background:rgba(201,162,39,.1);color:var(--gold-bright);border:1px solid rgba(201,162,39,.25);margin-right:.4rem}
+    .foot{border-top:1px solid var(--border);padding:3rem 0;color:#8d8170;font-size:.85rem}
+    .tag{background:var(--gold-deep);color:#fff;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .9rem;border-radius:999px;display:inline-block;margin-bottom:1rem}
   </style>
 </head>
-<body class="theme-royal-gold antialiased selection:bg-[#d4a843] selection:text-black">
-
-  <div id="luxury-cursor"></div>
-  <div id="luxury-dot"></div>
-
-  <!-- FLOATING MASTER SWITCHER & VIP EXECUTIVE CONTROLS -->
-  <aside class="sticky top-0 z-50 bg-black/92 backdrop-blur-xl border-b border-[#2e2316] px-4 py-3 shadow-2xl">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-      
-      <!-- Brand & Executive Badge -->
-      <div class="flex items-center gap-3">
-        <div class="relative w-9 h-9 rounded-full border border-[var(--gold-primary)] overflow-hidden shadow-md">
-          <img src="assets/lumora_real_asset_0.jpg" alt="Lumora Official Seal" class="w-full h-full object-cover">
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-bold text-white tracking-[0.2em] uppercase display-font">LUMORA SKIN</span>
-            <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-[#291f16] text-[#d4a843] border border-[#594228]">
-              ● LIVE FLAGSHIP & WHATSAPP SUITE
-            </span>
-          </div>
-          <p class="text-[10px] text-[#8c7b6c]">Verified WhatsApp Line: <a href="https://wa.me/918840827259" target="_blank" class="text-[#d4a843] hover:underline font-mono">+91 88408 27259</a></p>
-        </div>
-      </div>
-
-      <!-- Live Theme Engine -->
-      <div class="flex items-center bg-[#140e0a] p-1 rounded-2xl border border-[#3b2b1a] text-xs">
-        <button id="theme-btn-royal" onclick="switchTheme('royal-gold')" class="px-3.5 py-1.5 rounded-xl font-bold bg-[#d4a843] text-black shadow-lg transition flex items-center gap-1.5">
-          <span>👑</span> Royal 24K Gold
-        </button>
-        <button id="theme-btn-clinical" onclick="switchTheme('clinical-lab')" class="px-3.5 py-1.5 rounded-xl font-medium text-[#a6927d] hover:text-white transition flex items-center gap-1.5">
-          <span>🔬</span> Clinical Lab
-        </button>
-        <button id="theme-btn-glass" onclick="switchTheme('glass-skin')" class="px-3.5 py-1.5 rounded-xl font-medium text-[#a6927d] hover:text-white transition flex items-center gap-1.5">
-          <span>🌸</span> K-Beauty Glass
-        </button>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-2">
-        <button onclick="toggleAudio()" id="sound-btn" class="px-3 py-1.5 rounded-xl border border-[#3b2b1a] hover:border-[#d4a843] text-xs font-medium text-[#d4a843] flex items-center gap-1.5 transition">
-          <span id="sound-icon">🔈</span> <span class="hidden sm:inline">Sensory Sound</span>
-        </button>
-        <button onclick="openVipPass()" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#d4a843] to-[#8f651b] text-black text-xs font-bold shadow-md hover:scale-105 transition">
-          ★ VIP Black Card
-        </button>
-      </div>
-
-    </div>
-  </aside>
-
-  <!-- STOREFRONT HEADER -->
-  <header class="border-b border-[var(--border)] px-6 py-5 bg-[var(--bg-dark)]/90 backdrop-blur-md sticky top-[57px] z-40 transition-colors">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      
-      <div class="flex items-center gap-4">
-        <div class="w-12 h-12 rounded-full border border-[var(--gold-primary)] p-0.5 shadow-lg relative group cursor-pointer" onclick="playChime(587.33)">
-          <img src="assets/lumora_real_asset_0.jpg" alt="Lumora Seal" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition duration-500">
-        </div>
-        <div>
-          <h1 class="text-2xl md:text-3xl font-light tracking-[0.25em] display-font text-[var(--text-main)]">LUMORA</h1>
-          <p class="text-[9px] tracking-[0.4em] text-[var(--text-muted)] uppercase">Cellular Radiance • 24K Saffron Formulation</p>
-        </div>
-      </div>
-
-      <nav class="hidden lg:flex items-center gap-8 text-xs font-medium tracking-[0.2em] uppercase text-[var(--text-muted)]">
-        <a href="#canvas-hero" class="hover:text-[var(--gold-primary)] transition">The Ritual</a>
-        <a href="#gold-flagship" class="hover:text-[var(--gold-primary)] transition text-[var(--gold-bright)] font-bold">👑 The Gold Flagship</a>
-        <a href="#clear-kit" class="hover:text-[var(--gold-primary)] transition text-[#38bdf8] font-bold">✨ Clear Skin Kit</a>
-        <a href="#scanner" class="hover:text-[var(--gold-primary)] transition">AI Scanner</a>
-        <a href="#products-showcase" class="hover:text-[var(--gold-primary)] transition">Catalog</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20from%20the%20Flagship%20collection" target="_blank" onclick="playChime(659.25)" class="flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--gold-primary)] text-[var(--gold-primary)] text-xs font-bold hover:bg-[var(--gold-primary)] hover:text-black transition shadow-lg">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.056-1.118-.08-.258-.083-.586-.201-.988-.377-1.706-.749-2.812-2.487-2.898-2.6-.086-.115-.696-.927-.696-1.77 0-.843.44-1.258.597-1.429.157-.17.342-.213.456-.213.114 0 .228.001.328.006.105.006.244-.04.382.293.144.344.49 1.196.533 1.282.043.086.071.187.014.3-.057.115-.086.186-.171.286-.086.099-.18.223-.257.299-.086.086-.176.179-.076.351.101.171.446.736.958 1.192.658.587 1.213.769 1.385.855.172.086.272.072.372-.043.101-.115.429-.501.543-.673.114-.171.229-.143.386-.086.157.057.999.472 1.17.558.172.086.286.129.328.2.043.072.043.415-.101.82z"/></svg>
-          <span class="font-mono">+91 88408 27259</span>
-        </a>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- 1. HERO WITH INTERACTIVE 24K MOLTEN GOLD FLUID CANVAS -->
-  <section id="canvas-hero" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6 py-20">
-    <canvas id="gold-fluid-canvas" class="absolute inset-0 w-full h-full pointer-events-auto z-0 opacity-70"></canvas>
-    <div class="absolute w-[600px] h-[600px] rounded-full bg-[var(--gold-primary)] opacity-15 blur-[120px] pointer-events-none gold-aura"></div>
-
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 pointer-events-none">
-      
-      <div class="lg:col-span-7 space-y-6 pointer-events-auto">
-        
-        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full text-xs tracking-[0.25em] uppercase bg-[var(--bg-surface)] text-[var(--gold-bright)] border border-[var(--border)] shadow-xl">
-          <span class="w-2 h-2 rounded-full bg-[var(--gold-primary)] animate-ping"></span>
-          <span>Cellular Rejuvenation • 24K Saffron • Glutathione</span>
-        </div>
-
-        <h2 class="text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight leading-[1.04] editorial-font text-[var(--text-main)]">
-          Wake up to skin that looks like <br>
-          <span class="italic font-normal text-[var(--gold-bright)]">pure liquid light.</span>
-        </h2>
-
-        <p class="text-sm md:text-base text-[var(--text-muted)] max-w-xl font-light leading-relaxed">
-          Luxury that touches your skin. Crafted with 24K colloidal gold, pure saffron, and glutathione to clear cellular hyperpigmentation and reveal morning glass skin.
-        </p>
-
-        <div class="flex flex-wrap items-center gap-4 pt-4">
-          <a href="#gold-flagship" class="px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold shadow-2xl transition hover:scale-105" style="background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep)); color: #070605;">
-            👑 The Gold Flagship (₹1,699)
-          </a>
-          
-          <a href="#clear-kit" class="px-7 py-4 rounded-full border border-[var(--border)] bg-[var(--bg-surface)]/80 backdrop-blur text-xs uppercase tracking-widest font-semibold hover:border-[var(--gold-primary)] text-[var(--text-main)] transition">
-            ✨ Advance Clear Skin Kit (₹1,899)
-          </a>
-        </div>
-
-        <div class="grid grid-cols-3 gap-6 pt-10 border-t border-[var(--border)] text-xs text-[var(--text-muted)]">
-          <div>
-            <div class="text-2xl md:text-3xl font-normal display-font text-[var(--text-main)]">98.4%</div>
-            <div class="text-[11px] mt-1">Barrier Moisture Lock</div>
-          </div>
-          <div>
-            <div class="text-2xl md:text-3xl font-normal display-font text-[var(--text-main)]">14 Days</div>
-            <div class="text-[11px] mt-1">Dark Spot Clearance</div>
-          </div>
-          <div>
-            <div class="text-2xl md:text-3xl font-normal display-font text-[var(--text-main)]">24 Karat</div>
-            <div class="text-[11px] mt-1">Colloidal Gold Purity</div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="lg:col-span-5 pointer-events-auto">
-        <div id="hero-holo" class="holo-card rounded-3xl p-6 relative border border-[var(--border)] overflow-hidden shadow-2xl">
-          
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-[10px] tracking-widest uppercase font-bold px-3 py-1 rounded-full bg-[var(--bg-surface)] text-[var(--gold-bright)] border border-[var(--border)]">
-              FLAGSHIP TRIO RITUAL
-            </span>
-            <span class="text-xs text-[#4ade80] font-semibold flex items-center gap-1">
-              ● WhatsApp Automation Active
-            </span>
-          </div>
-
-          <div class="relative rounded-2xl overflow-hidden aspect-square border border-[var(--border)] group">
-            <img src="assets/lumora_duo.jpg" alt="Lumora Glow Duo" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
-            
-            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
-              <span class="font-medium bg-black/60 backdrop-blur px-3 py-1 rounded-lg">Gold Pack + Clear Kit + Serum</span>
-              <span class="font-bold bg-[var(--gold-primary)] text-black px-3 py-1 rounded-lg">SAVE ₹1,098</span>
-            </div>
-          </div>
-
-          <div class="mt-5 space-y-3">
-            <div class="flex items-baseline justify-between">
-              <div>
-                <span class="text-xs line-through text-[var(--text-muted)]">₹5,097</span>
-                <span class="text-3xl font-normal display-font text-[var(--text-main)] ml-2">₹3,999</span>
-              </div>
-              <span class="text-xs text-[var(--text-muted)]">Free Shipping Across India</span>
-            </div>
-
-            <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Complete%20Transformation%20Trio%20(₹3,999)%20%23LUM-TRIO-8840" target="_blank" onclick="playChime(783.99)" class="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-widest transition shadow-xl flex items-center justify-center gap-2 hover:scale-[1.02]" style="background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep)); color: #070605;">
-              <span>⚡</span> Order Trio via WhatsApp (+91 88408 27259)
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- 2. THE GOLD FLAGSHIP HERO SPOTLIGHT -->
-  <section id="gold-flagship" class="max-w-6xl mx-auto px-6 py-20 border-t border-[var(--border)] space-y-12">
-    
-    <div class="text-center max-w-2xl mx-auto space-y-3">
-      <span class="text-xs tracking-[0.3em] uppercase text-[var(--gold-bright)] font-semibold">The Crown Jewel</span>
-      <h3 class="text-3xl md:text-5xl font-light editorial-font text-[var(--text-main)]">The Gold Flagship</h3>
-      <p class="text-xs md:text-sm text-[var(--text-muted)]">Lumora 24K Gold Bright Night Pack • The definitive overnight transformation formula.</p>
-    </div>
-
-    <div class="holo-card rounded-3xl p-8 md:p-12 border-2 border-[var(--gold-primary)] shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative overflow-hidden">
-      
-      <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[var(--gold-primary)] opacity-10 blur-3xl pointer-events-none"></div>
-
-      <!-- Real Jar Photo -->
-      <div class="lg:col-span-5 rounded-2xl overflow-hidden aspect-square border border-[var(--border)] relative group shadow-2xl">
-        <img src="assets/lumora_real_asset_2.jpg" alt="Lumora Gold Bright Pack" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-        <div class="absolute top-4 left-4 bg-black/75 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[var(--gold-bright)] border border-[var(--gold-primary)]">
-          👑 24K Saffron & Glutathione Formula
-        </div>
-      </div>
-
-      <!-- Flagship Specs -->
-      <div class="lg:col-span-7 space-y-6">
-        <div>
-          <div class="flex items-center justify-between">
-            <span class="text-xs uppercase tracking-widest text-[var(--gold-bright)] font-bold">50ML CRYSTAL PACK • pH 5.5 BALANCED</span>
-            <span class="text-3xl font-normal display-font text-[var(--text-main)]">₹1,699</span>
-          </div>
-          <h4 class="text-3xl md:text-4xl font-light editorial-font text-[var(--text-main)] mt-2">Lumora Gold Bright Night Pack</h4>
-          <p class="text-xs md:text-sm text-[var(--text-muted)] mt-2 leading-relaxed">
-            Housed in Lumora's signature faceted crystal jar with a brushed gold screw lid. This intensive overnight emulsion accelerates cellular turnover, repairs compromised lipid barriers, and delivers pure 24K gold and Kashmiri saffron deep into the dermal matrix.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-2 border-t border-[var(--border)]">
-          <div class="p-3 rounded-xl bg-[var(--bg-surface)] border border-[var(--border)]">
-            <div class="font-bold text-[var(--gold-bright)]">24K Colloidal Gold</div>
-            <p class="text-[11px] text-[var(--text-muted)] mt-1">Stimulates micro-circulation & gives radiant morning luminescence.</p>
-          </div>
-          <div class="p-3 rounded-xl bg-[var(--bg-surface)] border border-[var(--border)]">
-            <div class="font-bold text-[var(--gold-bright)]">Glutathione & Alpha-Arbutin</div>
-            <p class="text-[11px] text-[var(--text-muted)] mt-1">Dual-action tyrosinase inhibition targeting stubborn dark spots.</p>
-          </div>
-          <div class="p-3 rounded-xl bg-[var(--bg-surface)] border border-[var(--border)]">
-            <div class="font-bold text-[var(--gold-bright)]">Triple Ceramide Matrix</div>
-            <p class="text-[11px] text-[var(--text-muted)] mt-1">Rebuilds lipid barrier to lock hydration for 24 hours.</p>
-          </div>
-          <div class="p-3 rounded-xl bg-[var(--bg-surface)] border border-[var(--border)]">
-            <div class="font-bold text-[var(--gold-bright)]">Pure Kashmiri Saffron</div>
-            <p class="text-[11px] text-[var(--text-muted)] mt-1">Traditional royal antioxidant for natural cellular illumination.</p>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-4 pt-4 border-t border-[var(--border)]">
-          <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(₹1,699)%20%23LUM-GOLD-8840" target="_blank" onclick="playChime(659.25)" class="flex-1 py-4 rounded-xl text-xs uppercase tracking-widest font-bold shadow-xl text-center transition hover:scale-105" style="background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep)); color: #070605;">
-            Order The Gold Flagship (₹1,699) via WhatsApp
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- 3. NEW PRODUCT: ADVANCE TWO-STEP CLEAR SKIN KIT -->
-  <section id="clear-kit" class="max-w-6xl mx-auto px-6 py-20 border-t border-[var(--border)] space-y-12">
-    
-    <div class="text-center max-w-2xl mx-auto space-y-3">
-      <span class="text-xs tracking-[0.3em] uppercase text-[#38bdf8] font-semibold">New Clinical Breakthrough</span>
-      <h3 class="text-3xl md:text-5xl font-light editorial-font text-[var(--text-main)]">Advance Two-Step Clear Skin Kit</h3>
-      <p class="text-xs md:text-sm text-[var(--text-muted)]">Tiny Vitamin C Active Booster Bottle + Clinical Treatment Sachet Pouch (2" Height × 1.5" Width).</p>
-    </div>
-
-    <div class="holo-card rounded-3xl p-8 md:p-12 border border-[#38bdf8]/50 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative overflow-hidden">
-      
-      <div class="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-[#38bdf8] opacity-10 blur-3xl pointer-events-none"></div>
-
-      <!-- Clear Kit Specs -->
-      <div class="lg:col-span-7 space-y-6 order-2 lg:order-1">
-        <div>
-          <div class="flex items-center justify-between">
-            <span class="text-xs uppercase tracking-widest text-[#38bdf8] font-bold">PROFESSIONAL 2-STEP SYSTEM</span>
-            <span class="text-3xl font-normal display-font text-[var(--text-main)]">₹1,899</span>
-          </div>
-          <h4 class="text-3xl md:text-4xl font-light editorial-font text-[var(--text-main)] mt-2">Advance Two-Step Clear Skin Kit</h4>
-          <p class="text-xs md:text-sm text-[var(--text-muted)] mt-2 leading-relaxed">
-            Engineered with microscopic precision for stubborn post-inflammatory hyperpigmentation and active blemishes. Features a concentrated micro-dropper bottle of Pure Vitamin C paired with ultra-compact sterile treatment pouches.
-          </p>
-        </div>
-
-        <div class="space-y-3 text-xs pt-2 border-t border-[var(--border)]">
-          <div class="p-3.5 rounded-xl bg-[var(--bg-surface)] border border-[var(--border)] flex items-start gap-3">
-            <span class="px-2 py-0.5 rounded bg-[#38bdf8]/20 text-[#38bdf8] font-bold text-[10px]">STEP 1</span>
-            <div>
-              <div class="font-bold text-white">Tiny Pure Vitamin C Active Booster Bottle (Amber Glass Ampoule)</div>
-              <p class="text-[11px] text-[var(--text-muted)] mt-0.5">Petite high-potency amber glass micro-dropper bottle preserving fresh L-Ascorbic Acid and Ferulic active. Delivers targeted cellular brightening directly onto dark spots.</p>
-            </div>
-          </div>
-
-          <div class="p-3.5 rounded-xl bg-[var(--bg-surface)] border border-[var(--border)] flex items-start gap-3">
-            <span class="px-2 py-0.5 rounded bg-[#38bdf8]/20 text-[#38bdf8] font-bold text-[10px]">STEP 2</span>
-            <div>
-              <div class="font-bold text-white">Clinical Treatment Sachet Pouch (2" Height × 1.5" Width)</div>
-              <p class="text-[11px] text-[var(--text-muted)] mt-0.5">Compact sealed foil pouch (exactly 2 inches tall by 1.5 inches wide) holding sterile active bio-ferment and spot-clearing resurfacing complex. Sealed for peak freshness and on-the-go portability.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-4 pt-4 border-t border-[var(--border)]">
-          <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Advance%20Two-Step%20Clear%20Skin%20Kit%20(Tiny%20Vit%20C%20Bottle%20%2B%202in%20x%201.5in%20Pouch%20-%20₹1,899)%20%23LUM-CLEARKIT-8840" target="_blank" onclick="playChime(659.25)" class="flex-1 py-4 rounded-xl text-xs uppercase tracking-widest font-bold shadow-xl text-center transition hover:scale-105 bg-[#38bdf8] text-[#070605]">
-            Order Advance Clear Kit (₹1,899) via WhatsApp (+91 88408 27259)
-          </a>
-        </div>
-      </div>
-
-      <!-- Real Clear Kit Photo -->
-      <div class="lg:col-span-5 rounded-2xl overflow-hidden aspect-square border border-[var(--border)] relative group shadow-2xl order-1 lg:order-2">
-        <img src="assets/lumora_clear_kit.jpg" alt="Lumora Advance Clear Skin Kit: Tiny Vit C Bottle & 2x1.5 Pouch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-        <div class="absolute top-4 right-4 bg-black/75 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#38bdf8] border border-[#38bdf8]/50">
-          ✨ Tiny Vit C Bottle + 2"×1.5" Pouch
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- 4. "LUMORA RADIANCE INDEX™" — INTERACTIVE AI FACIAL SCANNER -->
-  <section id="scanner" class="max-w-6xl mx-auto px-6 py-20 border-t border-[var(--border)] space-y-12">
-    
-    <div class="text-center max-w-2xl mx-auto space-y-3">
-      <span class="text-xs tracking-[0.3em] uppercase text-[var(--gold-bright)] font-semibold">Diagnostic Intelligence</span>
-      <h3 class="text-3xl md:text-5xl font-light editorial-font text-[var(--text-main)]">Lumora Radiance Index™</h3>
-      <p class="text-xs md:text-sm text-[var(--text-muted)]">Select your target facial zone below to calculate melanin density, lipid breakdown, and your cellular recovery protocol.</p>
-    </div>
-
-    <div class="bg-[var(--bg-card)] border border-[var(--border)] rounded-3xl p-6 md:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-      
-      <div class="lg:col-span-6 relative flex flex-col items-center">
-        <div class="relative w-72 h-80 rounded-3xl border border-[var(--border)] bg-[var(--bg-surface)] overflow-hidden flex items-center justify-center p-4 shadow-inner">
-          <div id="scan-laser" class="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-[var(--gold-bright)] to-transparent opacity-80 pointer-events-none transition-all duration-700" style="top: 20%;"></div>
-
-          <svg class="w-56 h-72 text-[var(--border)]" viewBox="0 0 200 260" fill="none" stroke="currentColor" stroke-width="1.5">
-            <ellipse cx="100" cy="130" rx="75" ry="105"/>
-            <path d="M50 85 Q100 70 150 85" stroke="currentColor" stroke-dasharray="3 3"/>
-            <circle cx="70" cy="115" r="12" stroke="currentColor"/>
-            <circle cx="130" cy="115" r="12" stroke="currentColor"/>
-            <path d="M70 160 Q100 180 130 160" stroke="currentColor"/>
-          </svg>
-
-          <button onclick="selectZone('forehead', 20)" class="absolute top-14 px-3 py-1 rounded-full text-[10px] font-bold bg-[#d4a843]/20 border border-[#d4a843] text-[#f5d485] hover:bg-[#d4a843] hover:text-black transition">
-            1. Forehead (Dullness)
-          </button>
-          
-          <button onclick="selectZone('eyes', 40)" class="absolute top-28 left-6 px-3 py-1 rounded-full text-[10px] font-bold bg-[#d4a843]/20 border border-[#d4a843] text-[#f5d485] hover:bg-[#d4a843] hover:text-black transition">
-            2. Under-Eye
-          </button>
-
-          <button onclick="selectZone('cheeks', 55)" class="absolute top-36 right-6 px-3 py-1 rounded-full text-[10px] font-bold bg-[#d4a843] text-black border border-[#d4a843] shadow-lg transition">
-            3. Cheeks (Dark Spots)
-          </button>
-
-          <button onclick="selectZone('jawline', 75)" class="absolute bottom-10 px-3 py-1 rounded-full text-[10px] font-bold bg-[#d4a843]/20 border border-[#d4a843] text-[#f5d485] hover:bg-[#d4a843] hover:text-black transition">
-            4. Jawline (Texture)
-          </button>
-        </div>
-        <p class="text-[11px] text-[var(--text-muted)] mt-3">Click any zone to scan cellular targets</p>
-      </div>
-
-      <div class="lg:col-span-6 space-y-6">
-        <div>
-          <span id="zone-tag" class="text-xs uppercase tracking-widest text-[var(--gold-bright)] font-bold">Zone 3: Malar Cheeks & Sun Spots</span>
-          <h4 id="zone-name" class="text-2xl md:text-3xl font-normal editorial-font text-[var(--text-main)] mt-1">Deep Epidermal Hyperpigmentation</h4>
-          <p id="zone-desc" class="text-xs text-[var(--text-muted)] mt-2 leading-relaxed">
-            Persistent melanin clustering caused by UV oxidation and hormonal shifts. Stratum corneum shows 64% lipid barrier breakdown.
-          </p>
-        </div>
-
-        <div class="space-y-3 border-t border-[var(--border)] pt-4 text-xs">
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="text-[var(--text-muted)]">Melanin Density Index</span>
-              <span id="zone-melanin" class="font-bold text-amber-400">76% (Elevated)</span>
-            </div>
-            <div class="w-full h-1.5 bg-[#251e16] rounded-full overflow-hidden">
-              <div id="bar-melanin" class="h-full bg-amber-400 rounded-full transition-all duration-700" style="width: 76%;"></div>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="text-[var(--text-muted)]">Lipid Moisture Barrier</span>
-              <span id="zone-barrier" class="font-bold text-red-400">36% (Severely Compromised)</span>
-            </div>
-            <div class="w-full h-1.5 bg-[#251e16] rounded-full overflow-hidden">
-              <div id="bar-barrier" class="h-full bg-red-400 rounded-full transition-all duration-700" style="width: 36%;"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border)] space-y-2">
-          <div class="text-[10px] uppercase tracking-widest text-[var(--gold-primary)] font-bold">Cellular Prescription:</div>
-          <div class="text-sm font-semibold text-white">The Lumora Gold Bright Night Protocol</div>
-          <p class="text-xs text-[var(--text-muted)]">Combine the Advance Clear Kit with the Gold Bright Pack for 14 nights.</p>
-        </div>
-
-        <a id="zone-prescription-btn" href="https://wa.me/918840827259?text=Hi%20Lumora!%20My%20Radiance%20Index%20showed%20Deep%20Hyperpigmentation.%20Please%20send%20my%20prescribed%20protocol%20%23LUM-SCAN-8840" target="_blank" onclick="playChime(880)" class="block text-center w-full py-3.5 rounded-xl text-xs uppercase tracking-widest font-bold shadow-lg transition hover:scale-[1.02]" style="background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep)); color: #070605;">
-          Forward Prescription To WhatsApp (+91 88408 27259) →
-        </a>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- 5. COMPLETE PRODUCT CATALOG -->
-  <section id="products-showcase" class="max-w-6xl mx-auto px-6 py-20 border-t border-[var(--border)] space-y-12">
-    
-    <div class="text-center max-w-2xl mx-auto space-y-3">
-      <span class="text-xs tracking-[0.3em] uppercase text-[var(--gold-bright)] font-semibold">The Full Ritual Catalog</span>
-      <h3 class="text-3xl md:text-5xl font-light editorial-font text-[var(--text-main)]">Curated Formulations</h3>
-      <p class="text-xs md:text-sm text-[var(--text-muted)]">Order individually or select one of our curated high-conversion bundles.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-      <!-- Item 1: Gold Bright Pack -->
-      <div class="holo-card rounded-3xl p-6 flex flex-col justify-between space-y-5 border border-[var(--border)] shadow-xl">
-        <div class="space-y-4">
-          <div class="flex justify-between items-start">
-            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[var(--bg-surface)] text-[var(--gold-bright)] border border-[var(--border)]">
-              GOLD FLAGSHIP
-            </span>
-            <div class="text-2xl font-light display-font text-[var(--text-main)]">₹1,699</div>
-          </div>
-
-          <div class="rounded-2xl overflow-hidden aspect-square border border-[var(--border)] group">
-            <img src="assets/lumora_real_asset_2.jpg" alt="Lumora Gold Bright Pack" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-
-          <div>
-            <h4 class="text-xl font-normal editorial-font text-[var(--text-main)]">Gold Bright Night Pack</h4>
-            <p class="text-xs text-[var(--text-muted)] mt-1">50ml Heavy Crystal Jar • 24K Saffron & Glutathione</p>
-          </div>
-
-          <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-            Signature night repair emulsion. Reverses dark spots and seals in all-night cellular hydration.
-          </p>
-        </div>
-
-        <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(₹1,699)%20%23LUM-GOLD-8840" target="_blank" onclick="playChime(659.25)" class="w-full py-3 rounded-xl border border-[var(--border)] text-xs font-bold hover:border-[var(--gold-primary)] text-white text-center transition">
-          WhatsApp Order — ₹1,699
-        </a>
-      </div>
-
-      <!-- Item 2: Advance Two-Step Clear Skin Kit -->
-      <div class="holo-card rounded-3xl p-6 flex flex-col justify-between space-y-5 border border-[#38bdf8]/40 shadow-xl">
-        <div class="space-y-4">
-          <div class="flex justify-between items-start">
-            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[var(--bg-surface)] text-[#38bdf8] border border-[#38bdf8]/30">
-              NEW • RESURFACING
-            </span>
-            <div class="text-2xl font-light display-font text-[var(--text-main)]">₹1,899</div>
-          </div>
-
-          <div class="rounded-2xl overflow-hidden aspect-square border border-[var(--border)] group">
-            <img src="assets/lumora_clear_kit.jpg" alt="Lumora Advance Clear Skin Kit: Tiny Vit C Bottle & 2x1.5 Pouch" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-
-          <div>
-            <h4 class="text-xl font-normal editorial-font text-[var(--text-main)]">Advance Clear Skin Kit</h4>
-            <p class="text-xs text-[var(--text-muted)] mt-1">Tiny Vit C Dropper Bottle + 2"×1.5" Pouch Sachet</p>
-          </div>
-
-          <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-            High-potency micro-dose protocol. Concentrated Vitamin C booster vial paired with a pocket-sized 2"×1.5" clinical foil sachet for intensive spot clearance.
-          </p>
-        </div>
-
-        <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Advance%20Clear%20Skin%20Kit%20(Tiny%20Vit%20C%20Bottle%20%2B%202in%20x%201.5in%20Pouch%20-%20₹1,899)%20%23LUM-CLEARKIT-8840" target="_blank" onclick="playChime(659.25)" class="w-full py-3 rounded-xl border border-[#38bdf8]/50 text-xs font-bold hover:bg-[#38bdf8]/10 text-white text-center transition">
-          WhatsApp Order — ₹1,899
-        </a>
-      </div>
-
-      <!-- Item 3: Radiance Serum -->
-      <div class="holo-card rounded-3xl p-6 flex flex-col justify-between space-y-5 border border-[var(--border)] shadow-xl">
-        <div class="space-y-4">
-          <div class="flex justify-between items-start">
-            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[var(--bg-surface)] text-[var(--gold-bright)] border border-[var(--border)]">
-              ACTIVE TREATMENT
-            </span>
-            <div class="text-2xl font-light display-font text-[var(--text-main)]">₹1,499</div>
-          </div>
-
-          <div class="rounded-2xl overflow-hidden aspect-square border border-[var(--border)] group">
-            <img src="assets/lumora_serum.jpg" alt="Lumora Radiance Serum" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-
-          <div>
-            <h4 class="text-xl font-normal editorial-font text-[var(--text-main)]">Radiance Infusion Serum</h4>
-            <p class="text-xs text-[var(--text-muted)] mt-1">30ml Glass Precision Dropper • 5% Niacinamide + TXA</p>
-          </div>
-
-          <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-            Ultra-concentrated daytime & night peptide booster. Fades post-acne marks and tightens pores.
-          </p>
-        </div>
-
-        <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Radiance%20Serum%20(₹1,499)%20%23LUM-SERUM-8840" target="_blank" onclick="playChime(659.25)" class="w-full py-3 rounded-xl border border-[var(--border)] text-xs font-bold hover:border-[var(--gold-primary)] text-white text-center transition">
-          WhatsApp Order — ₹1,499
-        </a>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- VIP HOLOGRAPHIC BLACK GOLD PASS MODAL -->
-  <div id="vip-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="relative max-w-md w-full bg-[#110e0a] border-2 border-[#d4a843] rounded-3xl p-8 shadow-2xl text-center space-y-6 overflow-hidden">
-      
-      <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[#d4a843] opacity-20 blur-3xl pointer-events-none"></div>
-
-      <div class="flex items-center justify-between border-b border-[#3b2b1a] pb-4">
-        <span class="text-xs uppercase tracking-[0.3em] text-[#d4a843] font-bold">LUMORA VIP ALLIANCE</span>
-        <button onclick="closeVipPass()" class="text-[#a6927d] hover:text-white text-lg">✕</button>
-      </div>
-
-      <div class="w-16 h-16 rounded-full border-2 border-[#d4a843] mx-auto p-1 overflow-hidden">
-        <img src="assets/lumora_real_asset_0.jpg" alt="Lumora Gold" class="w-full h-full object-cover rounded-full">
-      </div>
-
-      <div>
-        <h4 class="text-2xl font-light editorial-font text-white">Direct-To-Founder Concierge</h4>
-        <p class="text-xs text-[#a6927d] mt-1">Priority Batch Reservation & Skincare Forwarding</p>
-      </div>
-
-      <div class="p-4 rounded-2xl bg-[#1a140e] border border-[#3b2b1a] text-left text-xs space-y-2 font-mono">
-        <div class="flex justify-between text-[#8c7b6c]"><span>VIP Pass Token:</span> <span class="text-[#d4a843] font-bold">#LUM-GOLD-8840</span></div>
-        <div class="flex justify-between text-[#8c7b6c]"><span>Client Forwarding:</span> <span class="text-white">Active</span></div>
-        <div class="flex justify-between text-[#8c7b6c]"><span>Verified WhatsApp Line:</span> <span class="text-[#4ade80]">+91 88408 27259</span></div>
-      </div>
-
-      <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20Activating%20VIP%20Pass%20Token%20%23LUM-GOLD-8840%20for%20the%20Flagship%20collection" target="_blank" onclick="playChime(987.77)" class="block w-full py-4 rounded-xl text-xs uppercase tracking-widest font-bold shadow-xl transition hover:scale-105" style="background: linear-gradient(135deg, #f5d485, #8f651b); color: #070605;">
-        Claim VIP Allocation On WhatsApp (+91 88408 27259) →
-      </a>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="brand display">LUMORA SKIN</div>
+    <div>
+      <a href="#identity">Brand Identity</a>
+      <a href="#domains">Domain Strategy</a>
+      <a href="#concepts">Website Concepts</a>
     </div>
   </div>
+</nav>
 
-  <footer class="border-t border-[var(--border)] py-12 px-6 text-center text-xs text-[var(--text-muted)] space-y-4">
-    <div class="flex justify-center items-center gap-2">
-      <span class="font-bold tracking-widest text-[var(--text-main)] display-font">LUMORA SKIN</span>
-      <span>•</span>
-      <span>WhatsApp Line: +91 88408 27259</span>
-      <span>•</span>
-      <span>Instagram: @lumoraaskin</span>
+<header class="hero">
+  <div class="container">
+    <span class="motto display ui">Strategic Brand &amp; Digital Framework</span>
+    <h1>LUMORA SKIN<span class="ed"> — Decoding the Aesthetic DNA</span></h1>
+    <p>An audit of the LUMORA SKIN Instagram presence (<strong>@lumoraaskin / @lumora.skin</strong>) and a three-part framework — brand identity synthesis, domain-name strategy, and three premium website concepts — built for the high-end skincare digital boutique.</p>
+    <a href="#identity" style="display:inline-block;background:var(--cream);color:var(--onyx);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.8rem;padding:.9rem 2rem;border-radius:999px">Enter the framework</a>
+  </div>
+</header>
+
+<!-- 1. BRAND IDENTITY -->
+<section id="identity" class="section" style="background:var(--onyx-soft)">
+  <a class="anchor"></a>
+  <div class="container">
+    <span class="kicker">01 · Brand Identity Synthesis</span>
+    <h2 class="section-title">The Essence of Lumora</h2>
+    <p class="subhead">Distilled from the public Instagram aesthetic, bio, highlight stories, and product copy of LUMORA SKIN — a direct-to-consumer at-home skincare-tools brand built around LED, micro-derma, steam, and crystal tooling.</p>
+
+    <div class="grid3">
+      <div class="card">
+        <span class="chip">Core Essence</span>
+        <h3>Attainable At-Home Luxury</h3>
+        <p>Lumora positions professional-grade skin tools (LED wand, micro-derma pro, facial steamer, rose-quartz sculpting) within reach of the home user. The promise: clinic results, spa ritual, accessible price (£17–£44), BNPL via Clearpay.</p>
+      </div>
+      <div class="card">
+        <span class="chip">Brand Name Root</span>
+        <h3>Lumora = Light + Moment</h3>
+        <p>"Lumen" (light/radiance) fused with a soft, ownable suffix. The name signals glow without clinical coldness — warmth, optimism, and a personal "moment" of self-care.</p>
+      </div>
+      <div class="card">
+        <span class="chip">Core Promise</span>
+        <h3>"Skincare is self-care"</h3>
+        <p>Copy repeatedly frames beauty as personal agency — taking care of yourself, on your own terms, in your own time. This reframes a purchase as self-investment, not vanity.</p>
+      </div>
     </div>
-    <p class="max-w-md mx-auto text-[11px]">Cellular Dermatology • 24K Gold • Glutathione • Paraben Free • Cruelty Free</p>
-  </footer>
 
-  <script>
-    // Audio Synthesis (Web Audio API)
-    let audioCtx = null;
-    let audioEnabled = false;
+    <div class="section-title" style="font-size:2rem;margin-top:4rem">Visual Values &amp; Aesthetic DNA</div>
+    <div class="grid3">
+      <div class="card">
+        <h3>Color Psychology</h3>
+        <div style="margin-bottom:.75rem">
+          <span class="swatch" style="background:#0b0a09" title="Onyx #0b0a09"></span>
+          <span class="swatch" style="background:#161411" title="Onyx Soft #161411"></span>
+          <span class="swatch" style="background:#f6f2ea" title="Cream #f6f2ea"></span>
+          <span class="swatch" style="background:#c9a227" title="Molten Gold #c9a227"></span>
+          <span class="swatch" style="background:#f5d485" title="Bright Gold #f5d485"></span>
+          <span class="swatch" style="background:#e8b4c8" title="Rose Quartz #e8b4c8"></span>
+          <span class="swatch" style="background:#2d6a4f" title="Jade #2d6a4f"></span>
+        </div>
+        <p>Onyx black and cream establish the luxury foundation; molten gold signals prestige and radiance. Rose quartz, jade, and tiger's-eye accents borrow from the crystal highlighters (eye masks, sculpting sets) to add wellness and warmth.</p>
+      </div>
+      <div class="card">
+        <h3>Typography DNA</h3>
+        <p><strong>Display:</strong> Cinzel (serif, all-caps) — heritage, prestige, editorial authority.<br><strong>Editorial:</strong> Cormorant Garamond (italic) — softness, femininity, ritual.<br><strong>UI:</strong> Plus Jakarta Sans — legible, modern, e-commerce utility.</p>
+      </div>
+      <div class="card">
+        <h3>Imagery &amp; Tone</h3>
+        <p>Close-up tool photography, crystal macro shots, warm candlelit/spa lighting, gold-foil accents. Tone is encouraging, intimate, and empowerment-led ("you come first"), with urgency hooks (50% off second item, free gift, tag-for-rewards).</p>
+      </div>
+    </div>
 
-    function initAudio() {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-    }
+    <div class="section-title" style="font-size:2rem;margin-top:4rem">Psychological Impact on the Target Demographic</div>
+    <div class="grid3">
+      <div class="card">
+        <h3>Who: The Lumora Customer</h3>
+        <p>Primarily women 25–45, urban/suburban, mid-to-high disposable income, Instagram/TikTok-native. Values self-care as non-negotiable, wants "salon results at home" without clinic prices, responsive to gifting, UGC, and BNPL (Clearpay).</p>
+      </div>
+      <div class="card">
+        <h3>Emotional Triggers</h3>
+        <p>Black+gold triggers exclusivity and self-worth; cream/soft light triggers safety and approachability; crystal cues trigger holistic wellness; tool copy triggers clinical trust; discount codes trigger urgency and smart-shopper pride.</p>
+      </div>
+      <div class="card">
+        <h3>Perception Gap to Bridge</h3>
+        <p>Instagram reads as accessible luxury; a flagship site must elevate perceived value (higher AOV, heritage feel, personalization) without losing the approachable, ritual-first voice that won the follower base.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    function toggleAudio() {
-      initAudio();
-      audioEnabled = !audioEnabled;
-      document.getElementById('sound-icon').innerText = audioEnabled ? '🔊' : '🔈';
-      if (audioEnabled) playChime(523.25);
-    }
+<!-- 2. DOMAIN STRATEGY -->
+<section id="domains" class="section" style="background:var(--onyx)">
+  <a class="anchor"></a>
+  <div class="container">
+    <span class="kicker">02 · Domain Name Strategy</span>
+    <h2 class="section-title">Three Address Territories</h2>
+    <p class="subhead">Recommendations balance brand fit, memorability, and extension discipline. Prefer .com where available; use .co / .skin / .studio only as deliberate modern alternatives.</p>
 
-    function playChime(freq) {
-      if (!audioEnabled || !audioCtx) return;
-      try {
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 1.2);
-      } catch(e) {}
-    }
+    <div class="grid3" style="margin-bottom:2rem">
+      <div class="domain-set">
+        <span class="tag">Luxury / Prestige</span>
+        <h4>Exclusivity &amp; Heritage</h4>
+        <p>Ownable, surname-like, or "house/maison" framing for a high-end positioning that justifies premium pricing.</p>
+        <ul class="domains">
+          <li>lumoraatelier.com</li>
+          <li>lumoramaison.com</li>
+          <li>lumoraprive.com</li>
+          <li>houseoflumora.com</li>
+          <li>lumoraatelier.co</li>
+          <li>atelierlumora.com</li>
+        </ul>
+      </div>
+      <div class="domain-set">
+        <span class="tag">Minimalist / Modern</span>
+        <h4>Short, Punchy, Abstract</h4>
+        <p>Condensed, streamlined addresses for a contemporary, design-forward feel that scales beyond skincare.</p>
+        <ul class="domains">
+          <li>lumora.studio</li>
+          <li>lumra.co</li>
+          <li>bylumora.com</li>
+          <li>lmra.skin</li>
+          <li>mōraskin.co</li>
+          <li>lumora.io</li>
+        </ul>
+      </div>
+      <div class="domain-set">
+        <span class="tag">Descriptive / Functional</span>
+        <h4>Elegant &amp; Category-Clear</h4>
+        <p>Self-explanatory names that communicate the skincare product category while staying refined.</p>
+        <ul class="domains">
+          <li>lumoraskin.com</li>
+          <li>lumoraskincare.com</li>
+          <li>shoplumora.com</li>
+          <li>lumorathekit.com</li>
+          <li>lumoratools.com</li>
+          <li>lumoraritual.com</li>
+        </ul>
+      </div>
+    </div>
 
-    // Custom Cursor
-    const cursor = document.getElementById('luxury-cursor');
-    const dot = document.getElementById('luxury-dot');
-    window.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-      dot.style.left = e.clientX + 'px';
-      dot.style.top = e.clientY + 'px';
-    });
+    <div class="card" style="max-width:720px">
+      <h3 style="font-family:var(--font-display);color:var(--cream);margin-top:0">Strategic Guidance</h3>
+      <ul style="color:#c9bda3;line-height:1.8;padding-left:1.1rem">
+        <li><strong>Primary recommendation:</strong> <em>lumoraskin.com</em> (descriptive) as the flagship e-commerce address; it captures category intent and is easiest for the existing Instagram audience to recall.</li>
+        <li><strong>Prestige redirect:</strong> <em>lumoramaison.com</em> or <em>lumoraatelier.com</em> for campaign microsites and wholesale/press positioning.</li>
+        <li><strong>Modern alias:</strong> <em>lumora.studio</em> for the editorial/content arm and "ritual" storytelling.</li>
+        <li>Secure common misspellings and the .co/.net variants defensively; route all to the primary .com.</li>
+        <li>Keep handles consistent: @lumoraaskin / @lumora.skin across Instagram, TikTok, and WhatsApp business.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    // Theme Switcher
-    function switchTheme(theme) {
-      document.body.className = `theme-${theme} antialiased selection:bg-[#d4a843] selection:text-black`;
-      
-      const bRoyal = document.getElementById('theme-btn-royal');
-      const bClinical = document.getElementById('theme-btn-clinical');
-      const bGlass = document.getElementById('theme-btn-glass');
+<!-- 3. WEBSITE CONCEPTS -->
+<section id="concepts" class="section" style="background:var(--onyx-soft)">
+  <a class="anchor"></a>
+  <div class="container">
+    <span class="kicker">03 · Website Concept Proposals</span>
+    <h2 class="section-title">Three Digital Boutique Directions</h2>
+    <p class="subhead">World-class design directions for a premium skincare digital boutique. Each is a distinct aesthetic mood with its own typography, layout, UX atmosphere, and high-end feature set.</p>
 
-      [bRoyal, bClinical, bGlass].forEach(b => {
-        b.className = "px-3.5 py-1.5 rounded-xl font-medium text-[#a6927d] hover:text-white transition flex items-center gap-1.5";
-      });
+    <div class="grid3" style="margin-bottom:3rem">
+      <div class="card">
+        <span class="badge">Concept 1</span>
+        <h3>Atelier Lumière</h3>
+        <p style="color:#c9bda3">Editorial luxury — hushed, reverent, appointment-like.</p>
+        <h4 style="font-family:var(--font-display);color:var(--cream);margin:1.25rem 0 .5rem">Visual Direction</h4>
+        <ul style="color:#c9bda3;line-height:1.8;padding-left:1.1rem;font-size:.92rem">
+          <li><strong>Typography:</strong> Cinzel (display) × Cormorant Garamond (editorial italic).</li>
+          <li><strong>Layout:</strong> Asymmetrical editorial grids, wide gutters, full-bleed gold-leaf and macro-crystal imagery.</li>
+          <li><strong>Palette:</strong> Onyx, champagne cream, molten gold; minimal UI chrome.</li>
+        </ul>
+        <h4 style="font-family:var(--font-display);color:var(--cream);margin:1.25rem 0 .5rem">UX Atmosphere</h4>
+        <p style="color:#c9bda3;font-size:.92rem">Slow, considered browsing; subtle fade-in reveals; product pages feel like gallery placements with discreet "add to ritual" actions.</p>
+        <h4 style="font-family:var(--font-display);color:var(--cream);margin:1.25rem 0 .5rem">High-End Features</h4>
+        <ul style="color:#c9bda3;line-height:1.8;padding-left:1.1rem;font-size:.92rem">
+          <li>AI-driven skin analysis ("Lumora Radiance Index")</li>
+          <li>Cinematic product storytelling films per hero SKU</li>
+          <li>Bespoke membership / private concierge portal</li>
+          <li>WhatsApp concierge chat and 1-click in-chat ordering</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Concept 2</span>
+        <h3>Clinic Glass</h3>
+        <p style="color:#c9bda3">Clinical minimal — precise, trustworthy, fast.</p>
+        <h4 style="font-family:var(--font-display);color:var(--cream);margin:1.25rem 0 .5rem">Visual Direction</h4>
+        <ul style="color:#c9bda3;line-height:1.8;padding-left:1.1rem;font-size:.92rem">
+          <li><strong>Typography:</strong> Space Grotesk / Plus Jakarta Sans throughout; no serif noise.</li>
+          <li><strong>Layout:</strong> Modular 12-column grid, glassmorphism cards, generous white space, data-dense but uncluttered.</li>
+          <li><strong>Palette:</strong> Glass white, slate, single accent (ice-blue or gold).</li>
+        </ul>
+        <h4 style="font-family:var(--font-display);color:var(--cream);margin:1.25rem 0 .5rem">UX Atmosphere</h4>
+        <p style="color:#c9bda3;font-size:.92rem">Utility-first; rapid filtering, instant "add to kit," transparent ingredient tables, and trust signals (clinical reviews, dermatology notes).</p>
+        <h4 style="font-family:var(--font-display);color:var(--cream);margin:1.25rem 0 .5rem">High-End Features</h4>
+        <ul style="color:#c9bda3;line-height:1.8;padding-left:1.1rem;font-size:.92rem">
+          <li>Interactive skin-diagnostic quiz with personalized kit builder</li>
+          <li>Ingredient transparency and sourcing traceability</li>
+          <li>Subscription refill program with smart reorder prompts</li>
+          <li>AR "try-on" for sculpting tools and shade match</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">Concept 3</span>
+        <h3>Crystal Ritual</h3>
+        <p style="color:#c9bda3">Holistic wellness — sensorial, calming, spa-like.</p>
+        <h4 style="font-family:var(--font-display);color:var(--cream);margin:1.25rem 0 .5rem">Visual Direction</h4>
+        <ul style="color:#c9bda3;line-height:1.8;padding-left:1.1rem;font-size:.92rem">
+          <li><strong>Typography:</strong> Cormorant Garamond (display + body); warm, breathable tracking.</li>
+          <li><strong>Layout:</strong> Immersive full-bleed sections, fluid scroll animations, soft rounded containers.</li>
+          <li><strong>Palette:</strong> Deep indigo-night, rose quartz, jade, warm amber candlelight.</li>
+        </ul>
+        <h4 style="font-family:var(--font-display);color:var(--cream);margin:1.25rem 0 .5rem">UX Atmosphere</h4>
+        <p style="color:#c9bda3;font-size:.92rem">Sensorial and unhurried; ambient sound option, guided breathing between steps, ritual-based shopping ("morning glow," "evening reset").</p>
+        <h4 style="font-family:var(--font-display);color:var(--cream);margin:1.25rem 0 .5rem">High-End Features</h4>
+        <ul style="color:#c9bda3;line-height:1.8;padding-left:1.1rem;font-size:.92rem">
+          <li>Crystal gua sha / tool configurator (stone + intent pairing)</li>
+          <li>Personalized ritual builder with moon-cycle refill reminders</li>
+          <li>Community UGC gallery ("#lovelumora" customer moments)</li>
+          <li>Bespoke membership portal with early access to crystal drops</li>
+        </ul>
+      </div>
+    </div>
 
-      if (theme === 'royal-gold') {
-        bRoyal.className = "px-3.5 py-1.5 rounded-xl font-bold bg-[#d4a843] text-black shadow-lg transition flex items-center gap-1.5";
-      } else if (theme === 'clinical-lab') {
-        bClinical.className = "px-3.5 py-1.5 rounded-xl font-bold bg-[#0284c7] text-white shadow-lg transition flex items-center gap-1.5";
-      } else {
-        bGlass.className = "px-3.5 py-1.5 rounded-xl font-bold bg-[#ec4899] text-white shadow-lg transition flex items-center gap-1.5";
-      }
-      playChime(659.25);
-    }
+    <div class="card" style="max-width:900px;border-color:var(--gold-soft)">
+      <h3 style="font-family:var(--font-display);color:var(--cream);margin-top:0">Recommended Path Forward</h3>
+      <p style="color:#c9bda3;line-height:1.7;margin-bottom:1rem">Launch with <strong>Concept 1 (Atelier Lumière)</strong> as the flagship brand experience to match the Instagram aesthetic DNA, then layer Concept 2's diagnostic quiz and Concept 3's ritual configurator as progressive features. Anchor on the primary domain <em>lumoraskin.com</em> with <em>lumoramaison.com</em> as the prestige alias.</p>
+      <a href="https://hardik4love-lang.github.io/lumora-skin/" style="display:inline-block;background:var(--gold-deep);color:#fff;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;padding:1rem 2rem;border-radius:999px;margin-top:1rem">View live deployment</a>
+    </div>
+  </div>
+</section>
 
-    // Zone Scanner Logic
-    function selectZone(zone, topPct) {
-      playChime(783.99);
-      document.getElementById('scan-laser').style.top = topPct + '%';
+<footer class="foot">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:column;gap:1rem;text-align:center">
+    <div style="font-family:var(--font-display);letter-spacing:.05em;color:var(--cream)">LUMORA SKIN · Brand Identity &amp; Digital Framework</div>
+    <div style="color:#8d8170;font-size:.8rem">Audit synthesized from the public LUMORA SKIN Instagram presence (@lumoraaskin / @lumora.skin) and flagship storefront positioning. Deployed via GitHub Pages.</div>
+    <div style="color:#8d8170;font-size:.8rem">hardik4love-lang.github.io/lumora-skin/</div>
+  </div>
+</footer>
 
-      const tag = document.getElementById('zone-tag');
-      const name = document.getElementById('zone-name');
-      const desc = document.getElementById('zone-desc');
-      const melanin = document.getElementById('zone-melanin');
-      const barrier = document.getElementById('zone-barrier');
-      const barM = document.getElementById('bar-melanin');
-      const barB = document.getElementById('bar-barrier');
-
-      if (zone === 'forehead') {
-        tag.innerText = "Zone 1: Forehead & Micro-Lines";
-        name.innerText = "Dehydration Lines & Dull Melanin Veil";
-        desc.innerText = "Surface moisture evaporation has created superficial micro-lines. Cellular turnover is sluggish.";
-        melanin.innerText = "62% (Moderate)";
-        barrier.innerText = "48% (Compromised)";
-        barM.style.width = "62%";
-        barB.style.width = "48%";
-      } else if (zone === 'eyes') {
-        tag.innerText = "Zone 2: Periorbital Under-Eye";
-        name.innerText = "Micro-Vascular Stagnation & Dark Rings";
-        desc.innerText = "Thin delicate skin under eyes showing pooling iron deposits and poor lymphatic drainage.";
-        melanin.innerText = "81% (High)";
-        barrier.innerText = "30% (Severe)";
-        barM.style.width = "81%";
-        barB.style.width = "30%";
-      } else if (zone === 'cheeks') {
-        tag.innerText = "Zone 3: Malar Cheeks & Sun Spots";
-        name.innerText = "Deep Epidermal Hyperpigmentation";
-        desc.innerText = "Persistent melanin clustering caused by UV oxidation and hormonal shifts. Stratum corneum shows 64% lipid barrier breakdown.";
-        melanin.innerText = "76% (Elevated)";
-        barrier.innerText = "36% (Severely Compromised)";
-        barM.style.width = "76%";
-        barB.style.width = "36%";
-      } else {
-        tag.innerText = "Zone 4: Mandibular Jawline";
-        name.innerText = "Post-Inflammatory Erythema & Texture";
-        desc.innerText = "Rough texture and persistent post-breakout red/brown marks. Requires intensive night cellular repair.";
-        melanin.innerText = "68% (Elevated)";
-        barrier.innerText = "42% (Compromised)";
-        barM.style.width = "68%";
-        barB.style.width = "42%";
-      }
-    }
-
-    function openVipPass() {
-      playChime(880);
-      document.getElementById('vip-modal').classList.remove('hidden');
-    }
-    function closeVipPass() {
-      document.getElementById('vip-modal').classList.add('hidden');
-    }
-
-    // Canvas Molten Gold Interactive Fluid Simulation
-    const canvas = document.getElementById('gold-fluid-canvas');
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
-    let mouse = { x: null, y: null, radius: 120 };
-
-    function resizeCanvas() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-      initParticles();
-    }
-    window.addEventListener('resize', resizeCanvas);
-
-    class GoldParticle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.size = Math.random() * 2.5 + 0.5;
-        this.baseX = this.x;
-        this.baseY = this.y;
-        this.density = (Math.random() * 30) + 1;
-        this.alpha = Math.random() * 0.7 + 0.3;
-      }
-      draw() {
-        ctx.fillStyle = `rgba(212, 168, 67, ${this.alpha})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
-      }
-      update() {
-        if (mouse.x !== null) {
-          let dx = mouse.x - this.x;
-          let dy = mouse.y - this.y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < mouse.radius) {
-            let forceDirectionX = dx / distance;
-            let forceDirectionY = dy / distance;
-            let maxDistance = mouse.radius;
-            let force = (maxDistance - distance) / maxDistance;
-            let directionX = forceDirectionX * force * this.density;
-            let directionY = forceDirectionY * force * this.density;
-            this.x -= directionX;
-            this.y -= directionY;
-          } else {
-            if (this.x !== this.baseX) {
-              let dx = this.x - this.baseX;
-              this.x -= dx / 15;
-            }
-            if (this.y !== this.baseY) {
-              let dy = this.y - this.baseY;
-              this.y -= dy / 15;
-            }
-          }
-        }
-      }
-    }
-
-    function initParticles() {
-      particles = [];
-      const num = Math.floor((width * height) / 12000);
-      for (let i = 0; i < num; i++) {
-        particles.push(new GoldParticle());
-      }
-    }
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, width, height);
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].draw();
-        particles[i].update();
-      }
-      requestAnimationFrame(animateParticles);
-    }
-
-    window.addEventListener('mousemove', e => {
-      mouse.x = e.x;
-      mouse.y = e.y;
-    });
-
-    resizeCanvas();
-    animateParticles();
-  </script>
 </body>
 </html>
