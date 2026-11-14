@@ -413,11 +413,22 @@
         </div>
       </div>
 
-      <!-- Real Clear Kit Photo -->
-      <div class="lg:col-span-5 rounded-2xl overflow-hidden aspect-square border border-[var(--border)] relative group shadow-2xl order-1 lg:order-2">
-        <img src="assets/lumora_clear_kit.jpg" alt="Lumora Advance Clear Skin Kit: Tiny Vit C Bottle & 2x1.5 Pouch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-        <div class="absolute top-4 right-4 bg-black/75 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#38bdf8] border border-[#38bdf8]/50">
-          ✨ Tiny Vit C Bottle + 2"×1.5" Pouch
+      <!-- Real Clear Kit Photo & 4K Studio Switcher -->
+      <div class="lg:col-span-5 flex flex-col space-y-3 order-1 lg:order-2">
+        <div class="rounded-2xl overflow-hidden aspect-square border border-[var(--border)] relative group shadow-2xl">
+          <img id="clear-kit-display-img" src="assets/lumora_clear_kit.jpg" alt="Lumora Advance Clear Skin Kit: Tiny Vit C Bottle & 2x1.5 Pouch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute top-4 right-4 bg-black/75 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#38bdf8] border border-[#38bdf8]/50">
+            <span id="clear-kit-badge-text">✨ 4K Studio Render</span>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center gap-2 pt-1 text-xs">
+          <button id="btn-view-4k" onclick="toggleClearKitView('4k')" class="px-3.5 py-1.5 rounded-xl font-bold bg-[#38bdf8] text-black shadow-md transition">
+            4K Studio Quality
+          </button>
+          <button id="btn-view-real" onclick="toggleClearKitView('real')" class="px-3.5 py-1.5 rounded-xl font-medium bg-[#1c2433] text-[#8e9bb0] hover:text-white transition">
+            Client Physical Photo
+          </button>
         </div>
       </div>
 
@@ -778,6 +789,26 @@
     }
     function closeVipPass() {
       document.getElementById('vip-modal').classList.add('hidden');
+    }
+
+    function toggleClearKitView(mode) {
+      playChime(659.25);
+      const img = document.getElementById('clear-kit-display-img');
+      const badge = document.getElementById('clear-kit-badge-text');
+      const b4k = document.getElementById('btn-view-4k');
+      const breal = document.getElementById('btn-view-real');
+
+      if (mode === '4k') {
+        img.src = 'assets/lumora_clear_kit_4k.jpg';
+        badge.innerText = '✨ 4K Studio Quality';
+        b4k.className = 'px-3.5 py-1.5 rounded-xl font-bold bg-[#38bdf8] text-black shadow-md transition';
+        breal.className = 'px-3.5 py-1.5 rounded-xl font-medium bg-[#1c2433] text-[#8e9bb0] hover:text-white transition';
+      } else {
+        img.src = 'assets/lumora_clear_kit_real.jpg';
+        badge.innerText = '📸 Official Client Photo';
+        breal.className = 'px-3.5 py-1.5 rounded-xl font-bold bg-[#38bdf8] text-black shadow-md transition';
+        b4k.className = 'px-3.5 py-1.5 rounded-xl font-medium bg-[#1c2433] text-[#8e9bb0] hover:text-white transition';
+      }
     }
 
     // Canvas Molten Gold Interactive Fluid Simulation
