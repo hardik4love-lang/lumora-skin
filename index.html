@@ -894,6 +894,198 @@
 
     resizeCanvas();
     animateParticles();
-  </script>
+  
+    // LUMORA SPECIALIST AI AGENT LOGIC
+    function toggleLumoraChat() {
+      playChime(659.25);
+      const w = document.getElementById('lsChatWindow');
+      w.classList.toggle('hidden');
+      if (!w.classList.contains('hidden')) {
+        setTimeout(() => document.getElementById('lsChatInput').focus(), 100);
+      }
+    }
+
+    function sendAgentQuick(text) {
+      document.getElementById('lsChatInput').value = text;
+      sendAgentMsg();
+    }
+
+    function sendAgentMsg() {
+      const input = document.getElementById('lsChatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      playChime(523.25);
+      const msgContainer = document.getElementById('lsChatMessages');
+
+      // Append User Message
+      const userBubble = document.createElement('div');
+      userBubble.className = "flex items-start gap-2.5 justify-end";
+      userBubble.innerHTML = `
+        <div class="p-3 rounded-2xl rounded-tr-sm bg-[#d4a843] text-black font-medium text-xs max-w-[82%] shadow-md">
+          ${text}
+        </div>
+      `;
+      msgContainer.appendChild(userBubble);
+      input.value = "";
+      msgContainer.scrollTop = msgContainer.scrollHeight;
+
+      // Update WhatsApp Forward Link with user question
+      const forwardBtn = document.getElementById('lsForwardWhatsApp');
+      forwardBtn.href = `https://wa.me/918840827259?text=${encodeURIComponent("Hi Lumora Care! I was chatting with the Specialist Agent about: " + text + ". Please assist me with my order.")}`;
+
+      // Specialist Agent Response Logic
+      setTimeout(() => {
+        playChime(783.99);
+        const reply = generateSpecialistReply(text);
+        const botBubble = document.createElement('div');
+        botBubble.className = "flex items-start gap-2.5";
+        botBubble.innerHTML = `
+          <div class="w-7 h-7 rounded-full bg-[#d4a843] text-black font-bold flex items-center justify-center text-[10px] shrink-0 shadow-sm">L</div>
+          <div class="p-3.5 rounded-2xl rounded-tl-sm bg-[#1e1711] border border-[#3b2b1a] text-[#fbf8f3] space-y-2 max-w-[88%] shadow-md">
+            ${reply}
+          </div>
+        `;
+        msgContainer.appendChild(botBubble);
+        msgContainer.scrollTop = msgContainer.scrollHeight;
+      }, 400);
+    }
+
+    function generateSpecialistReply(query) {
+      const q = query.toLowerCase();
+
+      if (q.includes('gold') || q.includes('flagship') || q.includes('night pack') || q.includes('cream')) {
+        return `
+          <div class="font-bold text-[#f5d485] text-xs">👑 The Gold Flagship: Lumora 24K Gold Bright Night Pack</div>
+          <p class="text-[11px] text-[#b8a594]">Our crown jewel 50ml crystal pack formulated with <strong>24K Colloidal Gold, Pure Kashmiri Saffron, Glutathione, Alpha-Arbutin</strong>, and <strong>Triple Ceramides</strong>. It repairs compromised barriers and clears hyperpigmentation while you sleep.</p>
+          <div class="flex items-center justify-between pt-1">
+            <span class="font-bold text-white text-xs">₹1,699</span>
+            <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Gold%20Bright%20Night%20Pack%20(₹1,699)%20%23LUM-GOLD-8840" target="_blank" class="px-2.5 py-1 rounded bg-[#d4a843] text-black font-bold text-[10px] hover:bg-[#f5d485]">Order via WhatsApp →</a>
+          </div>
+        `;
+      }
+
+      if (q.includes('clear kit') || q.includes('advance') || q.includes('vit c') || q.includes('pouch') || q.includes('sachet') || q.includes('bottle')) {
+        return `
+          <div class="font-bold text-[#38bdf8] text-xs">✨ Advance Two-Step Clear Skin Kit (₹1,899)</div>
+          <p class="text-[11px] text-[#b8a594]">Includes our <strong>Tiny Pure Vitamin C Active Booster Bottle</strong> (amber glass micro-ampoule vial) paired with our <strong>Clinical Sachet Pouch (exact 2" H × 1.5" W)</strong> containing 3ML sterile active bio-ferment complex for blemish & spot resurfacing.</p>
+          <div class="flex items-center justify-between pt-1">
+            <span class="font-bold text-white text-xs">₹1,899</span>
+            <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Advance%20Clear%20Skin%20Kit%20(₹1,899)%20%23LUM-CLEARKIT-8840" target="_blank" class="px-2.5 py-1 rounded bg-[#38bdf8] text-black font-bold text-[10px] hover:bg-[#7dd3fc]">Order via WhatsApp →</a>
+          </div>
+        `;
+      }
+
+      if (q.includes('serum') || q.includes('niacinamide') || q.includes('dropper')) {
+        return `
+          <div class="font-bold text-[#f5d485] text-xs">💧 Radiance Infusion Face Serum (30ml)</div>
+          <p class="text-[11px] text-[#b8a594]">Formulated with <strong>5% Niacinamide, 2% Tranexamic Acid (TXA)</strong>, and <strong>GHK-Cu Copper Tripeptides</strong> to tightens pores, fade sun spots, and boost elasticity.</p>
+          <div class="flex items-center justify-between pt-1">
+            <span class="font-bold text-white text-xs">₹1,499</span>
+            <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Radiance%20Serum%20(₹1,499)%20%23LUM-SERUM-8840" target="_blank" class="px-2.5 py-1 rounded bg-[#d4a843] text-black font-bold text-[10px] hover:bg-[#f5d485]">Order via WhatsApp →</a>
+          </div>
+        `;
+      }
+
+      if (q.includes('routine') || q.includes('spot') || q.includes('pigmentation') || q.includes('melasma') || q.includes('trio') || q.includes('bundle')) {
+        return `
+          <div class="font-bold text-[#f5d485] text-xs">🧪 Prescribed 14-Night Glow Protocol</div>
+          <p class="text-[11px] text-[#b8a594]"><strong>Night Step 1:</strong> Prep with the Advance Clear Kit (Vit C + Sachet Pouch).<br><strong>Night Step 2:</strong> Apply 4 drops Radiance Serum.<br><strong>Night Step 3:</strong> Seal overnight with the 24K Gold Bright Night Pack.</p>
+          <p class="text-[10px] text-[#a6927d]">Get all 3 in the <strong>Transformation Trio Bundle for ₹3,999</strong> (Save ₹1,098 + Free Delivery).</p>
+          <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I'd%20like%20to%20order%20the%20Complete%20Transformation%20Trio%20(₹3,999)%20%23LUM-TRIO-8840" target="_blank" class="block text-center mt-1 py-1.5 rounded bg-[#d4a843] text-black font-bold text-[10px]">Order Trio Bundle (₹3,999) →</a>
+        `;
+      }
+
+      if (q.includes('cod') || q.includes('cash') || q.includes('delivery') || q.includes('order') || q.includes('ship') || q.includes('price')) {
+        return `
+          <div class="font-bold text-emerald-400 text-xs">📦 Cash on Delivery & Express Dispatch</div>
+          <p class="text-[11px] text-[#b8a594]">Yes, <strong>Cash on Delivery (COD)</strong> is available across all serviceable pincodes in India! Prepaid orders via UPI/Cards get priority same-day dispatch.</p>
+          <p class="text-[10px] text-[#a6927d]">Delivery time: 2–4 business days via courier with live WhatsApp tracking.</p>
+          <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I%20want%20to%20place%20a%20Cash%20on%20Delivery%20(COD)%20order" target="_blank" class="block text-center mt-1 py-1.5 rounded bg-emerald-500 text-black font-bold text-[10px]">Book COD Order on WhatsApp →</a>
+        `;
+      }
+
+      return `
+        <p class="text-[11px] text-[#b8a594]">I would love to help you with that! Would you like to speak directly with our Senior Skincare Specialist or place an order?</p>
+        <a href="https://wa.me/918840827259?text=Hi%20Lumora!%20I%20need%20skincare%20consultation%20regarding%20my%20skin" target="_blank" class="block text-center mt-1 py-1.5 rounded bg-[#d4a843] text-black font-bold text-[10px]">Chat on WhatsApp (+91 88408 27259) →</a>
+      `;
+    }
+</script>
+
+  <!-- ==================== SPECIALIST AI CHAT ASSISTANT ==================== -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <!-- Pulse Toggle Button -->
+    <button id="lsChatToggle" onclick="toggleLumoraChat()" class="relative w-14 h-14 rounded-full bg-gradient-to-tr from-[#d4a843] via-[#f5d485] to-[#d4a843] text-black shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none border border-[#fff2c2]">
+      <span class="text-2xl">💬</span>
+      <span class="absolute top-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-black animate-pulse"></span>
+    </button>
+
+    <!-- Chat Modal Window -->
+    <div id="lsChatWindow" class="hidden absolute bottom-16 right-0 w-[350px] sm:w-[410px] bg-[#110e0a]/95 backdrop-blur-2xl border-2 border-[#d4a843] rounded-3xl shadow-2xl flex flex-col overflow-hidden text-xs text-white">
+      
+      <!-- Header -->
+      <div class="px-5 py-4 border-b border-[#3b2b1a] bg-[#1a140e] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full border border-[#d4a843] p-0.5 overflow-hidden shadow-sm">
+            <img src="assets/lumora_real_asset_0.jpg" alt="Lumora Seal" class="w-full h-full object-cover rounded-full">
+          </div>
+          <div>
+            <div class="font-bold text-white tracking-wider flex items-center gap-1.5 display-font text-[13px]">
+              <span>LUMORA SPECIALIST AGENT</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            </div>
+            <div class="text-[10px] text-[#a6927d]">Cellular Skincare Concierge • Active</div>
+          </div>
+        </div>
+        <button onclick="toggleLumoraChat()" class="text-[#a6927d] hover:text-white text-base">✕</button>
+      </div>
+
+      <!-- Messages Stream -->
+      <div id="lsChatMessages" class="flex-1 p-4 space-y-3 overflow-y-auto max-h-[320px] custom-scroll">
+        <div class="flex items-start gap-2.5">
+          <div class="w-7 h-7 rounded-full bg-[#d4a843] text-black font-bold flex items-center justify-center text-[10px] shrink-0 shadow-sm">L</div>
+          <div class="p-3.5 rounded-2xl rounded-tl-sm bg-[#1e1711] border border-[#3b2b1a] text-[#fbf8f3] space-y-1.5">
+            <p class="font-medium text-white">Hello! I am your Lumora Specialist Agent. ✨</p>
+            <p class="text-[11px] text-[#b8a594] leading-relaxed">
+              I have complete clinical specifications for our <strong>Gold Flagship</strong> (24K Gold Bright Night Pack), the <strong>Advance Two-Step Clear Skin Kit</strong> (tiny Vit C bottle + 2"×1.5" pouch), and our <strong>Radiance Serum</strong>.
+            </p>
+            <p class="text-[11px] text-[#d4a843] font-semibold">How can I assist your skincare routine today?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Pills -->
+      <div class="px-3 py-2 bg-[#16110c] border-t border-[#2e2316] flex gap-1.5 overflow-x-auto text-[10px] whitespace-nowrap">
+        <button onclick="sendAgentQuick('Tell me about the Gold Flagship Pack')" class="px-2.5 py-1 rounded-full bg-[#291f16] border border-[#594228] text-[#f5d485] hover:bg-[#d4a843] hover:text-black transition">
+          👑 Gold Flagship
+        </button>
+        <button onclick="sendAgentQuick('What is the Advance Clear Skin Kit?')" class="px-2.5 py-1 rounded-full bg-[#291f16] border border-[#38bdf8]/50 text-[#38bdf8] hover:bg-[#38bdf8] hover:text-black transition">
+          ✨ Advance Clear Kit
+        </button>
+        <button onclick="sendAgentQuick('Recommend routine for stubborn dark spots')" class="px-2.5 py-1 rounded-full bg-[#291f16] border border-[#594228] text-[#f5d485] hover:bg-[#d4a843] hover:text-black transition">
+          🧪 Spot Routine
+        </button>
+        <button onclick="sendAgentQuick('How to order via Cash on Delivery (COD)?')" class="px-2.5 py-1 rounded-full bg-[#291f16] border border-emerald-700 text-emerald-400 hover:bg-emerald-500 hover:text-black transition">
+          📦 COD Orders
+        </button>
+      </div>
+
+      <!-- Input Bar -->
+      <div class="p-3 bg-[#1a140e] border-t border-[#3b2b1a] flex gap-2">
+        <input id="lsChatInput" type="text" placeholder="Ask about products, ingredients, or order status..." class="flex-1 bg-[#110e0a] border border-[#3b2b1a] rounded-xl px-3 py-2 text-xs text-white placeholder-[#8c7b6c] focus:outline-none focus:border-[#d4a843]" onkeydown="if(event.key==='Enter') sendAgentMsg()">
+        <button onclick="sendAgentMsg()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#d4a843] to-[#b8882a] text-black font-bold text-xs hover:scale-105 transition shadow-sm">
+          →
+        </button>
+      </div>
+
+      <!-- Direct Client Forwarding to WhatsApp (+91 88408 27259) -->
+      <div class="px-3 py-2.5 bg-[#140e0a] border-t border-[#2e2316] flex flex-col gap-1.5">
+        <a id="lsForwardWhatsApp" href="https://wa.me/918840827259?text=Hi%20Lumora!%20Connecting%20from%20the%20Specialist%20Agent%20chat%20to%20order%20the%20Flagship" target="_blank" onclick="playChime(659.25)" class="w-full py-2.5 rounded-xl bg-[#25d366]/20 border border-[#25d366]/50 text-[#25d366] font-bold text-[11px] text-center hover:bg-[#25d366]/30 transition flex items-center justify-center gap-2">
+          <span>💬</span> Forward Chat to WhatsApp Care (+91 88408 27259)
+        </a>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>
