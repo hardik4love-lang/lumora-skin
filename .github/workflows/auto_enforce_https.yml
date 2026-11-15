@@ -1,0 +1,28 @@
+name: Auto Enforce HTTPS Cloud Watcher
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  contents: read
+
+jobs:
+  check-and-enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check and Enforce HTTPS
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RESPONSE=$(gh api repos/${{ github.repository }}/pages)
+          STATUS=$(echo "$RESPONSE" | jq -r '.https_certificate.state')
+          ENFORCED=$(echo "$RESPONSE" | jq -r '.https_enforced')
+          echo "SSL State: $STATUS | Enforced: $ENFORCED"
+          if [ "$STATUS" = "approved" ] && [ "$ENFORCED" = "false" ]; then
+            echo "Certificate Approved! Enforcing HTTPS in cloud..."
+            gh api -X PUT repos/${{ github.repository }}/pages -F https_enforced=true
+            echo "HTTPS successfully enforced in the cloud!"
+          fi
